@@ -9,8 +9,13 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("layouts", process.cwd() + "/views/layouts");
 
-app.get("*", (req, res) => {
-  res.render("homepage", { layout: "index", title: "testing 123" });
+app.use(express.static("public"));
+app.use(express.static("public/images"));
+
+app.get("/", (req, res) => {
+  res.render("homepage", { layout: "index", title: "Da Butterfly Emporium" });
 });
 
-app.listen(3000, () => console.log("App is listening on http://"));
+app.listen(3000, () =>
+  console.log("App is listening on http://localhost:3000")
+);
