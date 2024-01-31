@@ -13,6 +13,4 @@ app.get("*", (req, res) => {
   res.render("homepage", { layout: "index", title: "testing 123" });
 });
 
-app.listen(3000, () =>
-  console.log("App is listening on http://localhost:3000")
-);
+app.listen(3000, () => console.log("App is listening on http://"));
