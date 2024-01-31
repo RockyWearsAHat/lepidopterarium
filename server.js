@@ -8,6 +8,7 @@ const hbs = handlebars.create();
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("layouts", process.cwd() + "/views/layouts");
+app.set("partials", process.cwd() + "/views/partials");
 
 app.use(express.static("public"));
 app.use(express.static("public/images"));
