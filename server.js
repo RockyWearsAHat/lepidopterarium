@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("homepage", { layout: "default" });
+  res.render("landingPage", { layout: "default" });
 });
 
 app.get("/login", (req, res) => {
