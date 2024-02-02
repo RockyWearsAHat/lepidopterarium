@@ -1,17 +1,9 @@
-<div class="loginFormWrapper">
+<link rel="stylesheet" href="loginForm.css" />
+<div id="login_formWrapper">
   <form id="login_form">
-    <input
-      type="text"
-      maxlength="64"
-      id="login_usernameInput"
-      placeholder="Username / Email"
-    />
-    <input
-      type="password"
-      maxlength="64"
-      id="login_passwordInput"
-      placeholder="Password"
-    />
+    <input type="text" maxlength="64" id="login_usernameInput" placeholder="Username / Email" />
+    <input type="password" maxlength="64" id="login_passwordInput" placeholder="Password" />
+    <a id="login_registerLink" href="/register">Don't have an account? Register here</a>
     <button type="submit" id="login_submitBtn">Submit</button>
   </form>
 </div>

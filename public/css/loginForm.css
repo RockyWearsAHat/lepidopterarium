@@ -1,0 +1,58 @@
+#login_formWrapper {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login_form {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+#login_form > input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+#login_form > input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+#login_form > input:focus::placeholder {
+  color: transparent;
+}
+
+#login_submitBtn {
+  color: white;
+  background-color: black;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  transition: 0.2s all ease-out;
+}
+
+#login_submitBtn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#login_registerLink {
+  transition: 0.2s all ease-out;
+  border-bottom: 1px solid transparent;
+}
+
+#login_registerLink:hover {
+  border-bottom: 1px solid white;
+}

@@ -93,9 +93,13 @@ app.post("/api/user/login", async (req, res) => {
   }
 });
 
+app.get("/register", (req, res) => {
+  res.render("register", { layout: "default" });
+});
+
 //Force sync the models, probably not the best way to do so but works for quick development, just wipes all user data and all of the data from the dbs, so
-//if you keep force: true as true just be aware on each change of the server.js file because it's running off nodemon, your server will reload and the db 
-//will be wiped, not a big deal if you remember to reseed it every time, but just know the db gets removed every server reload with this option, and with 
+//if you keep force: true as true just be aware on each change of the server.js file because it's running off nodemon, your server will reload and the db
+//will be wiped, not a big deal if you remember to reseed it every time, but just know the db gets removed every server reload with this option, and with
 //nodemon the server reloads often.
 sequelize.sync({ force: true }).then(() => {
   app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
