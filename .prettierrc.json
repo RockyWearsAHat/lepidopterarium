@@ -1,5 +1,21 @@
 {
+  "trailingComma": "es5",
   "tabWidth": 2,
-  "printWidth": 120,
-  "singleQuote": false
+  "printWidth": 100,
+  "semi": true,
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": ["*.handlebars", "**/*.handlebars", "**/**/*.handlebars"],
+      "options": {
+        "parser": "glimmer"
+      }
+    },
+    {
+      "files": ["*.html", "legacy/**/*.js"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }
