@@ -26,10 +26,16 @@ routeHandler.post("/", async (req, res) => {
     if (!foundUser) throw new Error(`Unable to find user with username ${req.body.username}`);
 
     //Otherwise, try to validate the password with the passed password on the body, and if the validation is good, return the user logged in, this logic needs to be expanded but for now works
-    if (await foundUser.validatePassword(req.body.password)) return res.json("Logged in user!");
+    if (await foundUser.validatePassword(req.body.password)) {
+      await req.session.save(() => {
+        req.session.loggedIn = true;
+        res.json("Logged in user!");
+      });
+      return;
+    }
 
     //Otherwise just res json to try again, if the passwords match this won't be hit because of the return before res.json()
-    res.json("Try again!");
+    throw new Error("Unable to login user");
   } catch (err) {
     //If error, res.json the error
     res.json(err.message);
