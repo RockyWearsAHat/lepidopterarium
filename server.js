@@ -1,10 +1,17 @@
+//#region Requires
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
+const session = require("express-session");
+const sessionOpts = require("./db/session");
 const masterRouter = require("./routes/masterRouter");
 require("dotenv").config();
+//#endregion
 
 const app = express();
+
+//Make sure to app.use all middlewares before any of the routes to ensure they behave correctly for all routes
+//#region Engine/Paths/Parsing/Middlewares
 
 //Set up handlebars
 const hbs = handlebars.create();
@@ -22,12 +29,20 @@ app.use("/", express.static("public/scripts"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//Set up the session
+app.use(session(sessionOpts));
+
+//#endregion
+
+//#region Routes
+
 //Use all API/backend routes defined in ./routes/masterRouter.js
 app.use("/", masterRouter);
 
 //View/render routes
 app.get("/", (req, res) => {
-  res.render("landingPage", { layout: "default" });
+  if (req.session && req.session.loggedIn == true) console.log("logged in!");
+  res.render("landingPage", { layout: "default", loggedIn: req.session.loggedIn });
 });
 
 app.get("/login", (req, res) => {
@@ -37,6 +52,15 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register", { layout: "default" });
 });
+
+app.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    console.log("Logged out user");
+    res.render("logout", { layout: "default" });
+  });
+});
+
+//#endregion
 
 //Force sync the models, probably not the best way to do so but works for quick development, just wipes all user data and all of the data from the dbs, so
 //if you keep force: true as true just be aware on each change of the server.js file because it's running off nodemon, your server will reload and the db
