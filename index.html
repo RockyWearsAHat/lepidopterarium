@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    <title>L</title>
+    <style>
+        main {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .left-panel {
+            flex: 2; /* Takes up 2/3 of the available space */
+            background-color: lightblue;
+            padding: 60px;
+        }
+
+        .right-panel {
+            flex: 1; /* Takes up 1/3 of the available space */
+            background-color: lightgreen;
+            padding: 60px;
+        }
+        .site-header {
+            border: solid black 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Center vertically */
+        }
+
+        .site-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Center vertically */
+            width: 100%; /* Ensure the inner container takes full width */
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center; /* Center vertically */
+        }
+
+        .site-logo img {
+            width: 100%; /* Make the image fill the available width */
+            max-height: 80px; /* Adjust the height as needed */
+            margin-right: 10px; /* Add spacing between logo and menu */
+        }
+
+        .contained {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        menu h2 {
+            margin: 10; /* Remove default margin for better alignment */
+        }
+
+        .dish {
+            width: 48%; /* Adjust width to fit two dishes per row */
+            margin-bottom: 20px; /* Add margin for better spacing */
+        }
+    </style>
+</head>
+<body>
+    
+        <header class="site-header stuck contained">
+            <div class="site-header-inner">
+                <div class="site-logo">
+                    <a href="https://thanksgivingpoint.org">
+                        <img src="https://thanksgivingpoint.org/app/uploads/2021/10/logo-mobile.svg" alt="Thanksgiving Point" class="md-down mobile-logo">
+                    </a>
+                </div>
+                <menu class="menu">
+                    <h2 clase="menu">Login</h2>
+                </menu>
+            </div>
+            
+        </header>
+        <main> <div class="left-panel">
+            <!-- Content for the left panel goes here -->
+            <h1>Left Panel (2/3)</h1>
+        </div>
+
+        <div class="right-panel">
+            <!-- Content for the right panel goes here -->
+            <h1>Right Panel (1/3)</h1>
+        </div>
+    </main>
+
+</body>
+</html>
