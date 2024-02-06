@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    {{> head}}
+    {{!-- <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="description.css">
-    <title>Lepid</title>
- 
+    <title>Winging It Around The World</title> --}}
+    <link rel="stylesheet" href="butterfly.css">
 </head>
 <body>
     
-        <header class="site-header stuck contained">
+    <header>
+        {{> navbar}}
+    </header>
+        {{!-- <header class="site-header stuck contained">
             <div class="site-header-inner">
                 <div class="site-logo">
-                    <a href="https://thanksgivingpoint.org/attractions-tickets/butterfly-biosphere/">
-                        <img src="https://thanksgivingpoint.org/app/uploads/2021/10/logo-slim.svg" alt="Thanksgiving Point" class="md-down mobile-logo">
+                    <a href="https://thanksgivingpoint.org">
+                        <img src="https://thanksgivingpoint.org/app/uploads/2021/10/logo-mobile.svg" alt="Thanksgiving Point" class="md-down mobile-logo">
                     </a>
                 </div>
-                <nav class="nav">
-                    <a href="/"><h2 id="home" class="menu">Home</h2></a>
-                    <a href="/login"><h2 id="login" class="menu">Login</h2></a>
+                <nav class="nav border">
+                    <h2 id="home" class="menu">Home</h2>
+                    <h2 id="login" class="menu">Login</h2>
                 </nav>
             </div>
             
-        </header>
+        </header> --}}
         <main> 
-            <img class="background-img" src="blue_morpho_bg.PNG" alt="">
-            <h1 class="title">Blue Morpho</h1>
+            {{> butterfly}}
+            {{!-- <h1>Blue Morpho</h1>
             <div class="pic-and-des">
-        
-            <div class="mid-panel">   
-                <img class="tile-img" src="blue morpho3.jpeg" alt="morpho">
-                <input id="comment" type="text" placeholder="Comment">
+            <div class="left-panel">
+            <!-- Content for the left panel goes here -->
+            
+            <img src="./public/images/blue morpho3.jpeg" alt="morpho">
             </div>
 
-            <div class="left-panel">
-                <p>As its common name implies, the blue morpho butterfly’s wings are bright blue, edged with black.
+        <div class="right-panel">
+            <!-- Content for the right panel goes here -->
+            <p>As its common name implies, the blue morpho butterfly’s wings are bright blue, edged with black.
                 The blue morpho is among the largest butterflies in the world, with wings spanning from five to 
                 eight inches. Their vivid, iridescent blue coloring is a result of the microscopic scales on 
                 the backs of their wings, which reflect light. The underside of the morpho’s wings, on the 
@@ -46,24 +50,10 @@
                 to be brighter in color. Blue morphos, like other butterflies, also have two clubbed antennas,
                 two fore wings and two hind wings, six legs and three body segments—the head, thorax and 
                 abdomen.
-                </p>
-            </div>
-
-
-
-        <div class="right-panel">
-            <h3 class="h3-title">FOUND IN</h3>
-            <p>South America</p>
-            <h3 class="h3-title">FACT</h3>
-            <p>The blue morpho is among the largest butterflies in the world, with wings spanning from five to
-                 eight inches.
             </p>
-            
-         
         </div>
-    </div>
+    </div> --}}
     </main>
 
 </body>
 </html>
-
