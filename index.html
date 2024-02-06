@@ -4,114 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
-    <title>L</title>
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .pic-and-des {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            display: flex;
-        }
+    <link rel="stylesheet" href="./public/css/description.css">
+    <title>Lepido</title>
 
-        .left-panel {
-            flex: 6; /* Takes up 2/3 of the available space */
-            background-color: rgb(255, 255, 255);
-            padding: 0px 40px;
-            border-right: 2px solid black
-        }
-        .mid-panel {
-            flex: 6; /* Takes up 1/3 of the available space */
-            display: flex;
-            background-color: rgb(255, 255, 255);
-            padding: 20px;
-            /* border-right: 2px solid black; */
-            justify-content: center;
-            max-height: 300px;
-            
-        }
-        .right-panel {
-            flex: 2; /* Takes up 1/3 of the available space */
-            background-color: rgb(255, 255, 255);
-            padding: 0px 20px;
-        }
-
-    
-        .site-header {
-            /* border: solid black 2px; */
-            background-color: rgb(156, 157, 158);
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Center vertically */
-        }
-
-        .site-header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Center vertically */
-            width: 100%; /* Ensure the inner container takes full width */
-        }
-
-        .site-logo {
-            display: flex;
-            align-items: center; /* Center vertically */
-        }
-
-        .site-logo img {
-            width: 100%; /* Make the image fill the available width */
-            max-height: 80px; /* Adjust the height as needed */
-            margin-right: 10px; /* Add spacing between logo and menu */
-            padding: 10px 0px;
-        }
-
-        .contained {
-            padding-left: 60px;
-            padding-right: 60px;
-        }
-
-        .border {
-            border: solid black 2px;
-        }
-        nav{
-            display: flex;
-        }
-        nav h2 {
-            margin: 10; /* Remove default margin for better alignment */
-            color: rgb(94, 94, 94);
-            padding: 0px 10px;
-        }
-        .tile-img {
-            border-radius: 10px;
-        }
-        .title{
-            display: flex;
-            /* justify-content: center; */
-            padding: 0px 40px;
-            font-size: 29px;
-            font-family: Arial, sans-serif;
-        }
-        .right-panel p{
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-        } 
-        .background-img{
-            display: flex;
-            max-height: 100px;
-            /* height: 20px; */
-            /* width: auto; */
-            width: 100%;
-            height: 300px;
-            background-position: right 0;
-        }
-        .h3-title{
-            border-bottom: 2px rgb(216, 131, 20) solid;
-        }
-
-
-    </style>
 </head>
 <body>
     
@@ -136,6 +31,7 @@
         
             <div class="mid-panel">   
                 <img class="tile-img" src="./public/images/blue morpho3.jpeg" alt="morpho">
+                <input id="comment" type="text" placeholder="Comment">
             </div>
 
             <div class="left-panel">
@@ -162,7 +58,6 @@
             <p>The blue morpho is among the largest butterflies in the world, with wings spanning from five to
                  eight inches.
             </p>
-            
          
         </div>
     </div>
