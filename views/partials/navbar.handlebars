@@ -1,14 +1,20 @@
 <link rel="stylesheet" href="navbar.css" />
 <div id="navbar_wrapper">
+  <div class="site-logo">
+    <a href="https://thanksgivingpoint.org/attractions-tickets/butterfly-biosphere/">
+      <img src="https://thanksgivingpoint.org/app/uploads/2021/10/logo-slim.svg" alt="Thanksgiving Point"
+        class="md-down mobile-logo">
+    </a>
+  </div>
+  <h1><a href="/">TITLE HERE</a></h1>
   <div id="navbar_link_wrap">
     <h2 class="navbar_linkBtn" id="navbar_homeBtn"><a href="/">Home</a></h2>
     <h2 class="navbar_linkBtn" id="navbar_loginBtn">
       {{#if loggedIn}}
-        <a href="/logout">Logout</a>
+      <a href="/logout">Logout</a>
       {{else}}
-        <a href="/login">Login</a>
+      <a href="/login">Login</a>
       {{/if}}
     </h2>
   </div>
-  <script src="forceReloadOnNav.js"></script>
 </div>
