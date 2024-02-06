@@ -54,6 +54,10 @@ app.get("/register", (req, res) => {
   res.render("register", { layout: "default" });
 });
 
+app.get("/description", (req, res) => {
+  res.render("description", { layout: "default" });
+});
+
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     console.log("Logged out user");
