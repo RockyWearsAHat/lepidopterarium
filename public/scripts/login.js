@@ -3,12 +3,14 @@ const loginFormEl = document.getElementById("login_form");
 const usernameInput = document.getElementById("login_usernameInput");
 const passwordInput = document.getElementById("login_passwordInput");
 
+const errorDisplay = document.getElementById("login_error");
+
 const submitBtn = document.getElementById("login_submitBtn");
 
 const handleSubmit = async (e) => {
-  e.preventDefault();
-
   try {
+    await e.preventDefault();
+
     const username = usernameInput.value || "";
     const password = passwordInput.value || "";
 
@@ -24,14 +26,15 @@ const handleSubmit = async (e) => {
       body: JSON.stringify({ username, password }),
     });
 
-    const jsonRes = await res.json();
+    let jsonRes = await res.json();
 
     switch (jsonRes) {
       case "Logged in user!":
         window.location.href = "/";
         break;
       default:
-        console.log(jsonRes);
+        if (isEmail(username)) jsonRes = jsonRes.replace("username", "email");
+        errorDisplay.innerHTML = jsonRes;
         break;
     }
   } catch (err) {
