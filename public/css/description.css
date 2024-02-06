@@ -100,7 +100,7 @@ nav h2 {
 .h3-title{
     border-bottom: 2px rgb(216, 131, 20) solid;
 }
-.comment{
+#comment{
     padding: 15px 10px;
     margin-top: 20px;
     border-radius: 20px;
