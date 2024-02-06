@@ -1,3 +1,13 @@
 <link rel="stylesheet" href="navbar.css" />
-<h2 class="navbar_linkBtn" id="navbar_homeBtn"><a href="/">Home</a></h2>
-<h2 class="navbar_linkBtn" id="navbar_loginBtn"><a href="/login">Login</a></h2>
+<div id="navbar_wrapper">
+  <div id="navbar_link_wrap">
+    <h2 class="navbar_linkBtn" id="navbar_homeBtn"><a href="/">Home</a></h2>
+    <h2 class="navbar_linkBtn" id="navbar_loginBtn">
+      {{#if loggedIn}}
+      <a href="/logout">Logout</a>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
+    </h2>
+  </div>
+</div>
