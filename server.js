@@ -2,6 +2,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
+const User = require("./models/user");
 const session = require("express-session");
 const sessionOpts = require("./db/session");
 const masterRouter = require("./routes/masterRouter");
