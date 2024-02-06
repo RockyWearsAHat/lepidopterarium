@@ -62,10 +62,8 @@ app.get("/logout", (req, res) => {
 
 //#endregion
 
-//Force sync the models, probably not the best way to do so but works for quick development, just wipes all user data and all of the data from the dbs, so
-//if you keep force: true as true just be aware on each change of the server.js file because it's running off nodemon, your server will reload and the db
-//will be wiped, not a big deal if you remember to reseed it every time, but just know the db gets removed every server reload with this option, and with
-//nodemon the server reloads often.
+//Force sync models, NOTE - FORCE: TRUE CAUSES ALL MODELS AND DATA FROM CURRENT DB TO BE WIPED
+//remember to reseed data/repost data if necessary, or turn force: false if the models aren't being updated
 sequelize.sync({ force: true }).then(() => {
   app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
 });

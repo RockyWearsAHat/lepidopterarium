@@ -1,0 +1,88 @@
+* {
+  color: black;
+}
+
+body {
+  background-color: blue;
+}
+
+#register_formWrapper,
+#register_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#register_form > *:not(#register_error[active="false"]) {
+  margin-top: 1em;
+}
+
+#rptPasswordWrap {
+  position: relative;
+}
+
+#register_passwordsMatch {
+  position: absolute;
+  top: 0px;
+  right: -53px;
+}
+
+#register_error {
+  line-height: 0;
+  gap: 0;
+}
+
+#register_passwordViewWrap,
+#register_rptPasswordViewWrap,
+#register_usernameWrap,
+#register_emailWrap {
+  position: relative;
+}
+
+#register_showPassword,
+#register_showRptPassword,
+#register_availableUsername,
+#register_availableEmail {
+  position: absolute;
+  right: -26px;
+  top: 1px;
+  user-select: none;
+}
+
+#register_showPassword:hover,
+#register_showRptPassword:hover {
+  cursor: pointer;
+}
+
+/* #register_passwordInput,
+#register_rptPasswordInput {
+} */
+
+#register_form > input,
+#register_form > * > input,
+#register_form > * > * > input {
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+#register_form > input::placeholder,
+#register_form > * > input::placeholder,
+#register_form > * > * > input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+#register_form > input:focus::placeholder,
+#register_form > * > input:focus::placeholder,
+#register_form > * > * > input:focus::placeholder {
+  color: transparent;
+}
+
+#register_error {
+  color: white;
+}

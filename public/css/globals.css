@@ -4,6 +4,8 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box;
 }
 /*
@@ -64,4 +66,11 @@ h6 {
   --navbarHeight: 70px;
   --navbarBackground: #87bccd;
   --navbarBtnHoverColor: #eafaff;
+}
+
+.material-symbols-outlined {
+  color: white;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  margin: 0;
+  padding: 0;
 }
