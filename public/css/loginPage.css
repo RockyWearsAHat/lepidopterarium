@@ -1,0 +1,5 @@
+#loginPage_background {
+  width: 100vw;
+  height: calc(100vh - var(--navbarHeight));
+  background-color: blue;
+}

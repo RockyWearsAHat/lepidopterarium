@@ -55,5 +55,13 @@ h6 {
 }
 
 * {
-  font-family: "Courier New", Courier, monospace;
+  /* SET UP FONTS */
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  text-decoration: none;
+
+  /* NAVBAR GLOBALS */
+  --navbarHeight: 70px;
+  --navbarBackground: #87bccd;
+  --navbarBtnHoverColor: #eafaff;
 }
