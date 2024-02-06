@@ -1,0 +1,53 @@
+main{
+    display: flex;
+    height: 88vh;
+    background-image: url('/A_large_blank_world_map_with_oceans_marked_in_blue.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+main >* {
+    background-color: aliceblue;
+}
+#region-container {
+    width: 30vw;
+    border: black solid 3px;
+}
+
+#hero-box {
+    width: 70vw;
+}
+
+#region-info {
+    font-size: 2.5vh;
+    padding: 1rem;
+    border: solid 3px black;
+}
+#select-container {
+    user-select: none;
+    padding: 1rem;
+    border: solid 3px black;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    font-size: 3vh;
+    list-style: none;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    border: solid black 2px;
+    margin-bottom: 1vh;
+}
+
+li > img {
+    height: 100%;
+}
+
+.select-li {
+    font-size: 3vh;
+}

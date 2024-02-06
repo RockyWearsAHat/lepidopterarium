@@ -2,7 +2,7 @@
   all: unset;
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1em;
   transition: 0.2s all ease-in-out;
   text-transform: uppercase;
   text-decoration-line: none;
@@ -20,6 +20,11 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+#navbar_wrapper > h1 > a{
+  color: white;
 }
 
 #navbar_link_wrap {
@@ -27,5 +32,16 @@
   gap: 2em;
   align-items: center;
   margin-right: 2em;
-  margin-left: auto;
+  margin-left:auto;
+}
+
+.site-logo{
+  height: 80%;
+  margin: 3vw;
+}
+
+.site-logo img {
+  height: 100%; /* Make the image fill the available width */
+  width: auto; /* Adjust the height as needed */
+  margin-left: 1vw; /* Add spacing between logo and menu */
 }
