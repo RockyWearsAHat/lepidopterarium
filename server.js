@@ -1,7 +1,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
-const User = require("./models/user");
+const User = require("../models/user");
 
 const app = express();
 
