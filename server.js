@@ -69,9 +69,9 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.post("/description", (req,res)=>{
-  res.send("posted somthing")
-})
+app.post("/description", (req, res) => {
+  res.send("posted somthing");
+});
 
 //#endregion
 
