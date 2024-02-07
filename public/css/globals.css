@@ -69,8 +69,8 @@ h2{
 
   /* NAVBAR GLOBALS */
   --navbarHeight: 12vh;
-  --navbarBackground: #87bccd;
-  --navbarBtnHoverColor: #eafaff;
+  --navbarBackground: #ed6a12;
+  --navbarBtnHoverColor: #ffd15d;
 }
 
 
@@ -83,7 +83,7 @@ h2{
 
 #page-title {
   height: 8vh;
-  background-color: aliceblue;
+  background-color: #ffd15da7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,4 +91,10 @@ h2{
   border-top: solid black 0.3vh;
   border-bottom: solid black 0.3vh;
   letter-spacing: 1em;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  #page-title {
+    text-align:center;
+  }
 }
