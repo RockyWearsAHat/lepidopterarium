@@ -75,3 +75,25 @@ body {
     border-bottom: 2px rgb(216, 131, 20) solid;
     text-align: center;
 }
+#comments-container{
+    padding: 10px;
+    margin: 0px 20px;
+}
+.comments-user-container{
+    max-height: 60px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+.comments-user-container:nth-child(odd){
+    background-color: aliceblue;
+    color: blue;
+}
+.comments-user-container:nth-child(even){
+    background-color: rgb(223, 231, 238); 
+}
+.user-display{
+    font-size: small;
+    padding: 10px 0px; 
+    font-style: italic;
+}
