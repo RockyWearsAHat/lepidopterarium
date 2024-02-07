@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-#navbar_wrapper > h1 > a{
+#navbar_wrapper > h1 > a {
   color: white;
 }
 
@@ -32,10 +32,10 @@
   gap: 2em;
   align-items: center;
   margin-right: 2em;
-  margin-left:auto;
+  margin-left: auto;
 }
 
-.site-logo{
+.site-logo {
   height: 80%;
   margin: 3vw;
 }
@@ -46,5 +46,21 @@
   margin-left: 1vw; /* Add spacing between logo and menu */
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-  
+h1 {
+  text-align: center;
+  font-size: calc(14px + 1.5vw);
+  user-select: none;
+}
+
+h2 {
+  font-size: calc(14px + 1.2vw);
+}
+
+@media (max-width: 800px) {
+  #navbar_wrapper > h1 > a {
+    visibility: hidden;
+  }
+}
+
+/* @media only screen and (min-width: 480px) and (max-width: 768px) {
+} */
