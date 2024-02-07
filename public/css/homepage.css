@@ -22,10 +22,16 @@
 .map-image {
     position: relative;
     max-width: auto;
-    height: 80vh;
+    height: 115vh;
 }
 
 #africa {
-    top: 50%;
+    top: 60%;
     left: 50%;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .page-title {
+        /*need to add css to adjust text*/
+    }
 }
