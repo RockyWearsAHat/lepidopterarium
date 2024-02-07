@@ -12,10 +12,20 @@ body{
 .left-panel {
     flex: 3; 
     display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     background-color: rgb(255, 255, 255);
     padding-top:2vh;
-    justify-content: center;    
+    justify-content: center;  
+    max-height: 300px; 
+     
 }
+.left-panel input{
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+
 .mid-panel {
     height: 100%;
     flex: 3; 
