@@ -5,18 +5,20 @@
     font-size: 2.8vh;
     padding-left: 1%;
     padding-right: 1%;
-    color: black;
-    background-color: aliceblue;
-    border: solid black 0.3vh;
-    border-radius: 3px;
+    border: solid rgb(255, 255, 255) 0.3vh;
+    border-radius: 5px;
     position: absolute;
     transform: translate(-50%, -50%);
+    box-shadow: -7px 8px 7px 0px rgb(0, 0, 0);
 }
 
 #map-container {
-    height: max-content;
+    height: 100vh;
     display: flex;
-    position: relative;
+    position: absolute;
+    top: 0;
+  left: 0;
+  z-index: -1;
     justify-content: center;
 }
 .map-image {
@@ -27,8 +29,53 @@
 }
 
 #africa {
-    top: 54%;
-    left: 50%;
-    background-color:rgba(35, 86, 255, 0.67);
+    top: 58%;
+    left: 55%;
+    background-color:rgba(38, 90, 247, 0.67);
+}
+
+#central {
+    top: 55%;
+    left: 22%;
+    background-color:rgba(38, 90, 247, 0.67);
+}
+
+#south-america {
+    top: 69%;
+    left: 33%;
+    background-color:rgba(38, 90, 247, 0.67);
+}
+
+#asia {
+    top: 48%;
+    left: 78%;
+    background-color:rgba(38, 90, 247, 0.67);
+}
+
+#guinea {
+    top: 65%;
+    left: 86%;
+    background-color:rgba(38, 90, 247, 0.67);
+    font-size: 13.5px;
+}
+
+#se-asia {
+    top: 57%;
+    left: 80%;
+    background-color:rgba(38, 90, 247, 0.67);
+    font-size: 13.5px;
+}
+
+a {
     color: white;
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  #page-title {
+    font-size: 2.5vw;
+  }
