@@ -1,6 +1,7 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .pic-and-des {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body{
 }
 
 .left-panel {
-    flex: 3; 
+    flex: 2; 
     background-color: rgb(255, 255, 255);
     padding: 0px 40px;
     border-right: 2px solid black;
@@ -25,20 +26,33 @@ body{
 }
 
 .mid-panel {
-    flex: 3; 
+    flex: 2;
+    background-color: rgb(255, 255, 255);
+    padding: 0px 5px;
+    border-right: 2px solid black;
+    flex-direction: column;
+    margin-left: -7%;
+}
+
+.mid-panel {
+    flex: 2;
     display: flex;
     background-color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 40px;
     /* border-right: 2px solid black; */
     justify-content: center;
     max-height: 300px;
     flex-direction: column;
-    
+    margin-top: 3%;
+
 }
+
 .right-panel {
     flex: 1;
+    /* Takes up 1/3 of the available space */
     background-color: rgb(255, 255, 255);
     padding: 0px 20px;
+    margin-top: 3%;
 }
 
 
@@ -48,25 +62,26 @@ body{
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center vertically */
+    align-items: center;
+    /* Center vertically */
 }
 
 .site-header-inner {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center vertically */
-    width: 100%; /* Ensure the inner container takes full width */
-}
-
-.site-logo {
-    display: flex;
-    align-items: center; /* Center vertically */
+    align-items: center;
+    /* Center vertically */
+    width: 100%;
+    /* Ensure the inner container takes full width */
 }
 
 .site-logo img {
-    width: 100%; /* Make the image fill the available width */
-    max-height: 80px; /* Adjust the height as needed */
-    margin-right: 10px; /* Add spacing between logo and menu */
+    width: 100%;
+    /* Make the image fill the available width */
+    max-height: 80px;
+    /* Adjust the height as needed */
+    margin-right: 10px;
+    /* Add spacing between logo and menu */
     padding: 10px 0px;
 }
 
@@ -78,40 +93,84 @@ body{
 .border {
     border: solid black 2px;
 }
-nav{
+
+nav {
     display: flex;
 }
+
 nav h2 {
-    margin: 10; /* Remove default margin for better alignment */
+    margin: 10;
+    /* Remove default margin for better alignment */
     color: rgb(94, 94, 94);
     padding: 0px 10px;
 }
-.tile-img {
+
+.tile-img, .tile-img2, .tile-img3 {
     border-radius: 10px;
+    height: 200px;
+    width: 300px;
+    box-shadow: -7px 8px 7px 0px black;
 }
-.title{
+
+.tile-img2, .tile-img3 {
+    margin-top: 3%;
+}
+.title {
     display: flex;
     /* justify-content: center; */
     padding: 0px 40px;
     font-size: 29px;
     font-family: Arial, sans-serif;
 }
-.right-panel p{
+
+.right-panel p {
     font-size: 16px;
     font-family: Arial, sans-serif;
-} 
-.background-img{
+}
+
+.background-img {
     display: flex;
     max-height: 100px;
     width: 100%;
     height: 300px;
     background-position: right 0;
 }
-.h3-title{
+
+.h3-title {
     border-bottom: 2px rgb(216, 131, 20) solid;
 }
-#comment{
+
+#comment {
     padding: 15px 10px;
     margin-top: 20px;
     border-radius: 20px;
+    height: 150px;
+    width: 300px;
+    box-shadow: -7px 8px 7px 0px black;
+    margin-bottom: 20px;
+    
+}
+
+ 
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .pic-and-des {
+        flex-direction: column;
+    }
+
+    .left_panel,
+    .mid-panel,
+    .right.panel {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .right-panel {
+        border-top: 2px solid black;
+    }
+
+    #comment {
+        margin-top: 20px;
+        /*adjust margin as needed */
+    }
+
 }
