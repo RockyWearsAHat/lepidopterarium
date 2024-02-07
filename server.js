@@ -58,6 +58,10 @@ app.get("/description", (req, res) => {
   res.render("description", { layout: "default" });
 });
 
+app.get("/africa", (req, res) => {
+  res.render("africa", { layout: "default" });
+});
+
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     console.log("Logged out user");

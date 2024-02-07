@@ -57,7 +57,6 @@ h6 {
 * {
   /* SET UP FONTS */
   font-family: "Work Sans", sans-serif;
-  color: black;
   text-decoration: none;
 
   /* NAVBAR GLOBALS */
@@ -88,5 +87,4 @@ h6 {
 /* @media only screen and (min-width: 480px) and (max-width: 768px) {
   #page-title {
     text-align:center;
-  }
-} */
+
