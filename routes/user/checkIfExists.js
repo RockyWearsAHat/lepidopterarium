@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 
     res.json("Valid");
   } catch (err) {
-    res.json(err.message);
+    res.json({ err: err.message });
   }
 });
 
