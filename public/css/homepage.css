@@ -12,20 +12,21 @@
 }
 
 #map-container {
-    height: 100vh;
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    justify-content: center;
-
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  justify-content: center;
+  background-color: black;
+  overflow: hidden;
 }
 .map-image {
   position: relative;
-  max-width: auto;
-  height: 110vh;
   width: 100vw;
+  transform: scale(1.2);
+  object-fit: contain;
 }
 
 #africa {
@@ -38,6 +39,11 @@
     top: 55%;
     left: 22%;
     background-color:rgba(38, 90, 247, 0.67);
+}
+
+
+#page-title {
+  position: relative;
 }
 
 #south-america {
@@ -68,6 +74,7 @@
 
 a {
     color: white;
+}
 
 body {
   width: 100vw;
