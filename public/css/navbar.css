@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-#navbar_wrapper > h1 > a{
+#navbar_wrapper > h1 > a {
   color: white;
 }
 
@@ -32,7 +32,7 @@
   gap: 2em;
   align-items: center;
   margin-right: 2em;
-  margin-left:auto;
+  margin-left: auto;
 }
 
 .site-logo {
@@ -60,4 +60,3 @@ h2 {
   #navbar_wrapper > h1 > a {
     visibility: hidden;
   }
-}

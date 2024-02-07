@@ -65,7 +65,6 @@ h6 {
   --navbarBtnHoverColor: #ffd15d;
 }
 
-
 .material-symbols-outlined {
   color: white;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
@@ -88,5 +87,4 @@ h6 {
 /* @media only screen and (min-width: 480px) and (max-width: 768px) {
   #page-title {
     text-align:center;
-  }
-} */
+

@@ -14,10 +14,20 @@ body {
 .left-panel {
     flex: 3;
     display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     background-color: rgb(255, 255, 255);
+    padding-top:2vh;
+    justify-content: center;  
+    max-height: 300px; 
+     
+}
+.left-panel input{
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
     margin-top: 3%;
     align-content: center;
-
 }
 
 .mid-panel {
@@ -64,4 +74,26 @@ body {
     font-size: 3.5vh;
     border-bottom: 2px rgb(216, 131, 20) solid;
     text-align: center;
+}
+#comments-container{
+    padding: 10px;
+    margin: 0px 20px;
+}
+.comments-user-container{
+    max-height: 60px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+.comments-user-container:nth-child(odd){
+    background-color: aliceblue;
+    color: blue;
+}
+.comments-user-container:nth-child(even){
+    background-color: rgb(223, 231, 238); 
+}
+.user-display{
+    font-size: small;
+    padding: 10px 0px; 
+    font-style: italic;
 }
