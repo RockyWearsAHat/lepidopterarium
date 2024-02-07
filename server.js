@@ -65,6 +65,10 @@ app.get("/logout", (req, res) => {
   });
 });
 
+app.post("/description", (req,res)=>{
+  res.send("posted somthing")
+})
+
 //#endregion
 
 //Force sync models, NOTE - FORCE: TRUE CAUSES ALL MODELS AND DATA FROM CURRENT DB TO BE WIPED
