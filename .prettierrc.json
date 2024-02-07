@@ -8,13 +8,7 @@
     {
       "files": ["*.handlebars", "**/*.handlebars", "**/**/*.handlebars"],
       "options": {
-        "parser": "glimmer"
-      }
-    },
-    {
-      "files": ["*.html", "legacy/**/*.js"],
-      "options": {
-        "tabWidth": 4
+        "parser": "html"
       }
     }
   ]
