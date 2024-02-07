@@ -11,8 +11,6 @@ const submitBtn = document.getElementById("register_submitBtn");
 
 const handleSubmit = async (e) => {
   await e.preventDefault();
-  errorDisplay.setAttribute("active", "false");
-  errorDisplay.innerHTML = "";
   try {
     if (!usernameEl || usernameEl.value == "") throw new Error("Username cannot be blank");
     if (!firstNameEl || firstNameEl.value == "") throw new Error("First name cannot be blank");
@@ -41,10 +39,28 @@ const handleSubmit = async (e) => {
 
     const jsonRes = await res.json();
 
-    if (jsonRes.err)
+    if (jsonRes.err) {
       throw new Error(`${jsonRes.err.substring(0, 1).toUpperCase()}${jsonRes.err.substring(1)}`);
+    }
 
-    console.log(jsonRes);
+    const loginRes = await fetch("http://localhost:3000/api/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username: usernameEl.value, password: passwordEl.value }),
+    });
+
+    console.log(loginRes);
+
+    const loginJson = await loginRes.json();
+
+    if (loginJson.err) throw new Error(loginJson.err);
+
+    errorDisplay.setAttribute("active", "false");
+    errorDisplay.innerHTML = "";
+
+    window.location.href = "/";
   } catch (err) {
     errorDisplay.setAttribute("active", "true");
     errorDisplay.innerHTML = err.message;
@@ -114,6 +130,9 @@ const checkIfExistsInDb = async (type, e) => {
 
   if (json == "Valid") {
     e.target.parentNode.children[1].innerHTML = "done";
+    return;
+  } else {
+    e.target.parentNode.children[1].innerHTML = "close";
     return;
   }
 };
