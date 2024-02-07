@@ -1,34 +1,46 @@
-
 .region-btn {
-    height: 6%;
-    width: auto;
-    font-size: 2.8vh;
-    padding-left: 1%;
-    padding-right: 1%;
-    color: black;
-    background-color: aliceblue;
-    border: solid black 0.3vh;
-    border-radius: 3px;
-    position: absolute;
-    transform: translate(-50%, -50%);
+  height: 6%;
+  width: auto;
+  font-size: 2.8vh;
+  padding-left: 1%;
+  padding-right: 1%;
+  color: black;
+  background-color: aliceblue;
+  border: solid black 0.3vh;
+  border-radius: 3px;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 #map-container {
-    height: max-content;
-    display: flex;
-    position: relative;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  justify-content: center;
 }
 .map-image {
-    position: relative;
-    max-width: auto;
-    height: 110vh;
-    width: 100vw;
+  position: relative;
+  max-width: auto;
+  height: 110vh;
+  width: 100vw;
 }
 
 #africa {
-    top: 54%;
-    left: 50%;
-    background-color:rgba(35, 86, 255, 0.67);
-    color: white;
+  top: 54%;
+  left: 50%;
+  background-color: rgba(35, 86, 255, 0.67);
+  color: white;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#page-title {
+  font-size: 2.5vw;
 }
