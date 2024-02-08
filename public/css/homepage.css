@@ -9,6 +9,13 @@
     position: absolute;
     transform: translate(-50%, -50%);
     box-shadow: -7px 8px 7px 0px rgb(0, 0, 0);
+    z-index:2;
+}
+.region-btn a {
+  /* Ensure anchor tags are above buttons */
+  z-index: 2;
+  /* Allow click actions on anchor tags */
+  pointer-events: auto;
 }
 
 #map-container {
@@ -25,6 +32,7 @@
 .map-image {
   position: relative;
   width: 100vw;
+  /* z-index: -2; */
   transform: scale(1.2);
   object-fit: contain;
 }
