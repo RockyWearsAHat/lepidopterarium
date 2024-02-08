@@ -58,16 +58,7 @@ app.get("/description", (req, res) => {
   res.render("description", { layout: "default" });
 });
 
-app.get("/region/northamerica", (req, res) => {
-  res.render("northamerica", { layout: "default" });
-});
-app.get("/region/southamerica", (req, res) => {
-  res.render("southamerica", { layout: "default" });
-});
-app.get("/region/europe", (req, res) => {
-  res.render("europe", { layout: "default" });
-});
-app.get("/region/africa", (req, res) => {
+app.get("/africa", (req, res) => {
   res.render("africa", { layout: "default" });
 });
 
@@ -78,9 +69,9 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.post("/description", (req,res)=>{
-  res.send("posted somthing")
-})
+app.post("/description", (req, res) => {
+  res.send("posted somthing");
+});
 
 //#endregion
 
