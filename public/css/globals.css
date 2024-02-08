@@ -53,18 +53,10 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-h1{
-  font-size: 5vh;
-  user-select: none;
-}
-h2{
-  font-size: 4vh;
-}
 
 * {
   /* SET UP FONTS */
   font-family: "Work Sans", sans-serif;
-  color: black;
   text-decoration: none;
 
   /* NAVBAR GLOBALS */
@@ -72,7 +64,6 @@ h2{
   --navbarBackground: #ed6a12;
   --navbarBtnHoverColor: #ffd15d;
 }
-
 
 .material-symbols-outlined {
   color: white;
@@ -93,8 +84,7 @@ h2{
   letter-spacing: 1em;
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+/* @media only screen and (min-width: 480px) and (max-width: 768px) {
   #page-title {
     text-align:center;
-  }
-}
+

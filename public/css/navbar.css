@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-#navbar_wrapper > h1 > a{
+#navbar_wrapper > h1 > a {
   color: white;
 }
 
@@ -32,10 +32,10 @@
   gap: 2em;
   align-items: center;
   margin-right: 2em;
-  margin-left:auto;
+  margin-left: auto;
 }
 
-.site-logo{
+.site-logo {
   height: 80%;
   margin: 3vw;
 }
@@ -44,7 +44,29 @@
   height: 100%; /* Make the image fill the available width */
   width: auto; /* Adjust the height as needed */
   margin-left: 1vw; /* Add spacing between logo and menu */
+  padding-block: 30px;
+  filter: brightness(0) invert(1);
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-  
+h1 {
+  text-align: center;
+  font-size: calc(14px + 1.5vw);
+  user-select: none;
+}
+
+h2 {
+  font-size: calc(14px + 1.2vw);
+}
+
+@media (max-width: 800px) {
+  #navbar_wrapper > h1 > a {
+    visibility: hidden;
+  }
+
+  #navbar_wrapper > h1 {
+    width: 0;
+  }
+}
+
+/* @media only screen and (min-width: 480px) and (max-width: 768px) {
+} */
