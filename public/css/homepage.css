@@ -19,22 +19,39 @@
 }
 
 #map-container {
-  height: 100vh;
+  border: red solid 3px;
+  /* height: 88vh;
   display: flex;
-  position: absolute;
+  position: absolute; 
   top: 0;
-  left: 0;
-  z-index: -2;
+  left: 0; */
+  z-index: 2; /*
   justify-content: center;
-  background-color: black;
-  overflow: hidden;
+  background-color: whitesmoke;*/
+  overflow: hidden; 
+  height: 80vh; 
+  max-width: 1024px; 
+  margin: 0 auto; /* Center the container horizontally */
+  position: relative; 
 }
 .map-image {
+  height: 150%;
+  width: 120%;
+  /* border: solid red 30px;
   position: relative;
+<<<<<<< HEAD
+  width: 100vw;/*
+  object-fit: contain; */
+  position: absolute; 
+  top: -25%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+=======
   width: 100vw;
   /* z-index: -2; */
   transform: scale(1.2);
   object-fit: contain;
+>>>>>>> c757a1011c895fc24bedb602990472e60cdfb0b9
 }
 
 #africa {
