@@ -64,35 +64,10 @@ app.get("/description", (req, res) => {
   res.render("description", { layout: "main" });
 });
 
-app.get("/africa", (req, res) => {
-  const data = {
-    name: 'Central America',
-    filename: '01-blossoming-apricot.jpg',
-    description:
-      'Central America is home to many bueatiful species of butterfly from around the world! "Awesome Butterflies" is synonamus wiht central america if you are trying to find that perfect pet!',
-    butterfly_ids: '[1,2,3]'
-  }
+app.get("/:region", (req, res) => {
+  console.log(req.query.region);
+  const data={}
   res.render("region", { layout: "main", data: data });
-});
-
-app.get("/central", (req, res) => {
-  res.render("central", { layout: "default" });
-});
-
-app.get("/southamerica", (req, res) => {
-  res.render("southamerica", { layout: "default" });
-});
-
-app.get("/asia", (req, res) => {
-  res.render("asia", { layout: "default" });
-});
-
-app.get("/guinea", (req, res) => {
-  res.render("guinea", { layout: "default" });
-});
-
-app.get("/seasia", (req, res) => {
-  res.render("seasia", { layout: "default" });
 });
 
 
