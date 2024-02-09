@@ -8,6 +8,7 @@ const sessionOpts = require("./db/session");
 const masterRouter = require("./routes/masterRouter");
 require("dotenv").config();
 //#endregion
+const { Region } = require('./models');
 
 const app = express();
 
@@ -15,11 +16,15 @@ const app = express();
 //#region Engine/Paths/Parsing/Middlewares
 
 //Set up handlebars
-const hbs = handlebars.create();
+const hbs = handlebars.create({
+  layoutsDir: app.get("layouts"),
+  partialsDir: app.get("partials")
+});
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-app.set("layouts", process.cwd() + "/views/layouts");
-app.set("partials", process.cwd() + "/views/partials");
+app.set("views", process.cwd() + "/views");
+
+app.set('view engine', 'handlebars');
 
 //Set up static routes for references on pages
 app.use("/", express.static("public/images"));
@@ -43,34 +48,42 @@ app.use("/", masterRouter);
 //View/render routes
 app.get("/", (req, res) => {
   if (req.session && req.session.loggedIn == true) console.log("logged in!");
-  res.render("landingPage", { layout: "default", loggedIn: req.session.loggedIn });
+  res.render("landingPage", { layout: "main", loggedIn: req.session.loggedIn });
 });
 
+
 app.get("/login", (req, res) => {
-  res.render("login", { layout: "default" });
+  res.render("login", { layout: "main" });
 });
 
 app.get("/register", (req, res) => {
-  res.render("register", { layout: "default" });
+  res.render("register", { layout: "main" });
 });
 
 app.get("/description", (req, res) => {
-  res.render("description", { layout: "default" });
+  res.render("description", { layout: "main" });
 });
 
 app.get("/africa", (req, res) => {
-  res.render("africa", { layout: "default" });
+  const data = {
+    name: 'Central America',
+    filename: '01-blossoming-apricot.jpg',
+    description:
+      'Central America is home to many bueatiful species of butterfly from around the world! "Awesome Butterflies" is synonamus wiht central america if you are trying to find that perfect pet!',
+    butterfly_ids: '[1,2,3]'
+  }
+  res.render("region", { layout: "main", data: data });
 });
 
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     console.log("Logged out user");
-    res.render("logout", { layout: "default" });
+    res.render("logout", { layout: "main" });
   });
 });
 
 app.post("/description", (req, res) => {
-  res.send("posted somthing");
+  res.render("posted somthing");
 });
 
 //#endregion
