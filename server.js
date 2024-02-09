@@ -70,14 +70,9 @@ app.post("/description", (req, res) => {
   res.json({success: true, message: 'Comment saved successfully'})
 });
 
-app.get("/africa", (req, res) => {
-  const data = {
-    name: 'Central America',
-    filename: '01-blossoming-apricot.jpg',
-    description:
-      'Central America is home to many bueatiful species of butterfly from around the world! "Awesome Butterflies" is synonamus wiht central america if you are trying to find that perfect pet!',
-    butterfly_ids: '[1,2,3]'
-  }
+app.get("/:region", (req, res) => {
+  console.log(req.query.region);
+  const data={}
   res.render("region", { layout: "main", data: data });
 });
 
