@@ -1,13 +1,15 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="loginPage.css">
-  <title>Login To The Emporium</title>
-</head>
-<body>
-  {{> navbar}}
-  <div id="loginPage_background">
-  {{> loginForm}}
+<div id="loginPage_background">
+  <link rel="stylesheet" href="loginForm.css" />
+  <div id="login_formWrapper">
+    <form id="login_form">
+      <input type="text" maxlength="64" id="login_usernameInput" placeholder="Username / Email" />
+      <input type="password" maxlength="64" id="login_passwordInput" placeholder="Password" />
+      <p id="login_error"></p>
+      <a id="login_registerLink" href="/register">Don't have an account yet? Register here</a>
+      <button type="submit" id="login_submitBtn">Submit</button>
+    </form>
   </div>
-</body>
+
+  <script src="checkIfEmail.js"></script>
+  <script src="login.js"></script>
+</div>
