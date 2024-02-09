@@ -44,7 +44,7 @@
   height: 100%; /* Make the image fill the available width */
   width: auto; /* Adjust the height as needed */
   margin-left: 1vw; /* Add spacing between logo and menu */
-  padding-block: 30px;
+  padding-block: 20px;
   filter: brightness(0) invert(1);
 }
 

@@ -63,6 +63,12 @@ h6 {
   --navbarHeight: 12vh;
   --navbarBackground: #ed6a12;
   --navbarBtnHoverColor: #ffd15d;
+
+  /* LOGIN/REGISTER PAGE */
+  --loginPageBackground: #202a33;
+  --registerPageBackground: #202a33;
+  --submitBtnColor: #3fa6eb;
+  --submitBtnHoverColor: #2b5875;
 }
 
 .material-symbols-outlined {

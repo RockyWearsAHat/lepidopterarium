@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -7em;
 }
 
 #login_form {
@@ -34,7 +35,7 @@
 
 #login_submitBtn {
   color: white;
-  background-color: black;
+  background-color: var(--submitBtnColor);
   width: 100px;
   height: 30px;
   border-radius: 15px;
@@ -45,12 +46,18 @@
 
 #login_submitBtn:hover {
   transform: scale(1.1);
+  background-color: var(--submitBtnHoverColor);
   cursor: pointer;
 }
 
 #login_registerLink {
+  text-align: center;
   transition: 0.2s all ease-out;
   border-bottom: 1px solid transparent;
+}
+
+#login_registerLink:visited {
+  color: white;
 }
 
 #login_registerLink:hover {
