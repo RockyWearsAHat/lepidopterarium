@@ -81,27 +81,6 @@ app.get("/africa", (req, res) => {
   res.render("region", { layout: "main", data: data });
 });
 
-app.get("/central", (req, res) => {
-  res.render("central", { layout: "default" });
-});
-
-app.get("/southamerica", (req, res) => {
-  res.render("southamerica", { layout: "default" });
-});
-
-app.get("/asia", (req, res) => {
-  res.render("asia", { layout: "default" });
-});
-
-app.get("/guinea", (req, res) => {
-  res.render("guinea", { layout: "default" });
-});
-
-app.get("/seasia", (req, res) => {
-  res.render("seasia", { layout: "default" });
-});
-
-
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     console.log("Logged out user");
