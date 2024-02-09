@@ -47,3 +47,4 @@ const regionData = [
 const seedRegions = () => Region.bulkCreate(regionData);
 
 module.exports = seedRegions;
+

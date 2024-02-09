@@ -41,7 +41,7 @@ app.use(session(sessionOpts));
 //#endregion
 
 //#region Routes
-
+//IGNORE THIS COMMENT
 //Use all API/backend routes defined in ./routes/masterRouter.js
 app.use("/", masterRouter);
 
@@ -64,12 +64,17 @@ app.get("/description", (req, res) => {
   res.render("description", { layout: "main" });
 });
 
+app.post("/description", (req, res) => {
+  const {comment} = req.body;
+  console.log('Received comment:', comment)
+  res.json({success: true, message: 'Comment saved successfully'})
+});
+
 app.get("/:region", (req, res) => {
   console.log(req.query.region);
   const data={}
   res.render("region", { layout: "main", data: data });
 });
-
 
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
@@ -86,6 +91,7 @@ app.post("/description", (req, res) => {
 
 //Force sync models, NOTE - FORCE: TRUE CAUSES ALL MODELS AND DATA FROM CURRENT DB TO BE WIPED
 //remember to reseed data/repost data if necessary, or turn force: false if the models aren't being updated
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
+  // seedAll();
   app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
 });
