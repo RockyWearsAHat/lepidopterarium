@@ -1,25 +1,26 @@
-// const Comments = require('./Comments');
-// const Lepo = require('./Lepo');
-// const user = require('user');
+
+const Comments = require('./Comments');
+const Lepo = require('./Lepo');
+const user = require('./user');
 const Region = require('./Region');
 
 
-// Comments.hasMany(user,{
-// foreignKey: 'Comment_id',
-// });
+Comments.hasMany(Lepo,{
+foreignKey: 'Comment_id',
+});
 
-// Comments.belongsTo(user);
+Comments.belongsTo(user,{
+    foreignKey: '',
+});
 
-// Comments.hasMany(Lepo,{
-// foreignKey: 'Lepo_id',
-// });
+Comments.hasMany(Lepo,{
+foreignKey: 'Lepo_id',
+});
 
 // Comments.belongsTo(Lepo);
 
 // Lepo.belongsTo()
 
-// module.exports = { Comments, Lepo, user };
+module.exports = { Comments, Lepo, user, Region };
 
 
-
-module.exports = { Region };

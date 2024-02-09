@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
 
+
 const Lepo = require('../models/Lepo.js');
 // const Comments = require('../models/Comments.js');
 

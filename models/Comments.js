@@ -21,5 +21,5 @@ Comments.init(
         modelName: "Comments", 
     });
 
-    module.export = Comments; 
+    module.exports = Comments; 
 
