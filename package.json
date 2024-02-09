@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "seed": "node seeds/index.js",
-    "start": "nodemon server.js"
+    "start": "node seeds/index.js && nodemon server.js"
   },
   "keywords": [],
   "author": "",

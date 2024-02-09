@@ -64,6 +64,12 @@ app.get("/description", (req, res) => {
   res.render("description", { layout: "main" });
 });
 
+app.post("/description", (req, res) => {
+  const {comment} = req.body;
+  console.log('Received comment:', comment)
+  res.json({success: true, message: 'Comment saved successfully'})
+});
+
 app.get("/africa", (req, res) => {
   const data = {
     name: 'Central America',
@@ -111,6 +117,7 @@ app.post("/description", (req, res) => {
 
 //Force sync models, NOTE - FORCE: TRUE CAUSES ALL MODELS AND DATA FROM CURRENT DB TO BE WIPED
 //remember to reseed data/repost data if necessary, or turn force: false if the models aren't being updated
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
+  // seedAll();
   app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
 });
