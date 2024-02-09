@@ -1,5 +1,8 @@
 #loginPage_background {
   width: 100vw;
   height: calc(100vh - var(--navbarHeight));
-  background-color: blue;
+  background-color: var(--loginPageBackground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
