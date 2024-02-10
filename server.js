@@ -2,13 +2,14 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
-const User = require("./models/user");
+
 const session = require("express-session");
 const sessionOpts = require("./db/session");
 const masterRouter = require("./routes/masterRouter");
 require("dotenv").config();
 //#endregion
-const { Region } = require('./models');
+//Include all the models we have created to use in our http functions! -LK
+const { Region, Lepo, User, Comments } = require("./models");
 
 const app = express();
 
@@ -18,13 +19,13 @@ const app = express();
 //Set up handlebars
 const hbs = handlebars.create({
   layoutsDir: app.get("layouts"),
-  partialsDir: app.get("partials")
+  partialsDir: app.get("partials"),
 });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", process.cwd() + "/views");
 
-app.set('view engine', 'handlebars');
+app.set("view engine", "handlebars");
 
 //Set up static routes for references on pages
 app.use("/", express.static("public/images"));
@@ -41,7 +42,6 @@ app.use(session(sessionOpts));
 //#endregion
 
 //#region Routes
-//IGNORE THIS COMMENT
 //Use all API/backend routes defined in ./routes/masterRouter.js
 app.use("/", masterRouter);
 
@@ -50,7 +50,6 @@ app.get("/", (req, res) => {
   if (req.session && req.session.loggedIn == true) console.log("logged in!");
   res.render("landingPage", { layout: "main", loggedIn: req.session.loggedIn });
 });
-
 
 app.get("/login", (req, res) => {
   res.render("login", { layout: "main" });
@@ -65,15 +64,50 @@ app.get("/description", (req, res) => {
 });
 
 app.post("/description", (req, res) => {
-  const {comment} = req.body;
-  console.log('Received comment:', comment)
-  res.json({success: true, message: 'Comment saved successfully'})
+  const { comment } = req.body;
+  console.log("Received comment:", comment);
+  res.json({ success: true, message: "Comment saved successfully" });
 });
 
-app.get("/:region", (req, res) => {
-  console.log(req.query.region);
-  const data={}
-  res.render("region", { layout: "main", data: data });
+//SEE HERE for accessing db data -LK
+app.get("/:region", async (req, res) => {
+  // Using :region (^See above) we can access the given info passed in the URL. Since the hrefs  in the html lead us to /africa or (/(regionname)), rather than search the db by name  -LK
+  console.log(`-------------- PARAMS : ${req.params.region}`);
+
+  let paramId;
+  // Ive added this switch case to get the ids. Its hard coded so not friendly for future dev but it works for now. The names in the db dont match the names in the href anyways and im too lazy to fix it. -LK
+  switch (req.params.region) {
+    case 'central': paramId = 1;break;
+    case 'africa': paramId = 2;break;
+    case 'southamerica': paramId = 3;break;
+    case 'asia': paramId = 4;break;
+    case 'guinea': paramId = 5;break;
+    case 'seasia': paramId = 6;break;
+    default: break;
+  }
+  try {
+    const dbRegionData = await Region.findByPk(paramId, {
+      //Including lepo here to display a pic of the butter fly and the name -LK
+      include: [
+        {
+          model: Lepo,
+        },
+      ],
+    });
+    if (!dbRegionData){
+      return res.status(404).send("Region Data not found");
+    }
+    //Data has to be converted to this plain then we can access the data as an object in the handlebars files. ex. {{data.regionName}} !! P.S.(in handlebars the object is always called data because its silly
+    // to call the object by the given var name here i guess) -LK
+    const regionData = dbRegionData.get({ plain: true })
+    console.log(regionData);
+    //Here we use the handlebars render function to get the "region" file(1st parameter) to render in the body of the "main" layout. We are also passing the regionData to display. -LK
+    res.render("region", { layout: "main", data: regionData });
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 app.get("/logout", (req, res) => {
