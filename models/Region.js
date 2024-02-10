@@ -11,22 +11,18 @@ Region.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        regionName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         filename: {
-            type: DataTypes.STRING(1000),
+            type: DataTypes.STRING(5000),
             allowNull: false,
         },
         description: {
-            type: DataTypes.STRING(1000),
+            type: DataTypes.STRING(5000),
             allowNull: false,
         },
-        butterfly_ids: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
     },
     {
         sequelize,
