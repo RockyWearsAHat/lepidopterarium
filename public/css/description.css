@@ -97,3 +97,24 @@ body {
     padding: 10px 0px; 
     font-style: italic;
 }
+
+    .comment-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .comment-container input {
+        padding-right: 30px; /* Adjust this value based on your logo size */
+        width: 100%;
+    }
+
+    .comment-container img {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+    }
+    .comment-container img:hover {
+        transform: translateY(-50%) scale(1.3); /* Scale the icon on hover */
+    }
