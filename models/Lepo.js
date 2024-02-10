@@ -11,23 +11,24 @@ Lepo.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    region: {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    regionId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    desc: {
+      type: DataTypes.STRING(10000),
+      allowNull: false,
+    },
+    images: {
       type: DataTypes.STRING,
     },
-    Name: {
+    facts: {
       type: DataTypes.STRING,
-    },
-    DESC: {
-      type: DataTypes.STRING,
-    },
-    Images: {
-      type: DataTypes.BLOB,
-    },
-    Facts: {
-      type: DataTypes.STRING,
-    },
-    Comments: {
-      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

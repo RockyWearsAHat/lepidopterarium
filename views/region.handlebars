@@ -1,9 +1,17 @@
 <link rel="stylesheet" href="/region.css">
 <div id="region-container">
     <div id="region-info">
-        <h1>{{data.name}}</h1>
+        {{!-- To display data, you have to use 'data' within the curly brackets while using handlebars then the name of the objects attribute. This info is passed through the http get request in server.js --}}
+        <h1>{{data.regionName}}</h1>
         <p>{{data.description}}</p>
     </div>
     <div id="select-container">
+        {{!-- Use {{data.Lepos.[0].name}} to access the name of a specific lepo. All lepos data in this region will be held in an array as objects of the attribute Lepo. So we acces data t
+        then .Lepos to get that array then to access a particular index we do .[i] then finally the attribute .name --}}
+    {{!-- We can use the each handlebars function to iterate through this index then import a partial called lepoSelect as {{> lepoSelect}}. --}}
+    {{#each data.Lepos as |Lepo|}}
+    {{!-- MORE COMMENTS IN /partials/lepoSelect.handlebars! --}}
+    {{> lepoSelect}}
+    {{/each}}
     </div>
 </div>
