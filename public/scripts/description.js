@@ -11,8 +11,22 @@ const commentField = document.getElementById('comment');
 //     return data
 // });
 
+// const res = await fetch("http://localhost:3000/api/user/description", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(body),
+//   });
+
+//   const jsonRes = await res.json();
+
+//   if (jsonRes.err) {
+//     throw new Error(`${jsonRes.err.substring(0, 1).toUpperCase()}${jsonRes.err.substring(1)}`);
+//   }
+
 const sendCommentToServer = (comment) => {
-    fetch('/description', {
+    fetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
