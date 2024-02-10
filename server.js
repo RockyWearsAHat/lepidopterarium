@@ -64,11 +64,11 @@ app.get("/description", (req, res) => {
   res.render("description", { layout: "main" });
 });
 
-app.post("/description", (req, res) => {
-  const {comment} = req.body;
-  console.log('Received comment:', comment)
-  res.json({success: true, message: 'Comment saved successfully'})
-});
+// app.post("/description", (req, res) => {
+//   const {comment} = req.body;
+//   console.log('Received comment:', comment)
+//   res.json({success: true, message: comment})
+// });
 
 app.get("/:region", (req, res) => {
   console.log(req.query.region);
@@ -83,9 +83,7 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.post("/description", (req, res) => {
-  res.render("posted somthing");
-});
+
 
 //#endregion
 
