@@ -11,15 +11,23 @@ Comments.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        comments: {
-            type: DataTypes.STRING,
+        comment: {
+            type: DataTypes.STRING(1000),
             allowNull: false,
         },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        lepoId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     },{
         sequelize, 
         freezeTableName: true,
         modelName: "Comments", 
     });
-
+   
     module.exports = Comments; 
 
