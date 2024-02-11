@@ -62,31 +62,6 @@ app.get("/register", (req, res) => {
 });
 
 
-
-//   // Fetch all comments
-//   Comments.findAll()
-//   .then(comments => {
-//     // Process fetched comments
-//     console.log(comments);
-//   })
-//   .catch(error => {
-//     // Handle error
-//     console.error('Error fetching comments:', error);
-//   });
-
-
-// app.get("/description", async (req, res) => {
-//   const tuna = req.body
-//   console.log("Hello",req.body)
-
-//   const commentsAndUsers = [
-//     { comment: 'Sick butterfly', user: 'Spidey' },
-//     { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
-//     { comment: 'Have you ever petted a butterfly', user: 'Vegeta' },
-// ];
-//   res.render("description", {commentsAndUsers} );
-// });
-
 app.get("/description", async (req, res) => {
   try {
     // Fetch all comments

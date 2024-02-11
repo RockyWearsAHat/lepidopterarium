@@ -1,6 +1,16 @@
 const sendButton = document.getElementById("send");
 const commentField = document.getElementById('comment');
 
+const getComments = async () =>
+    fetch('/description', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => res.json())
+    .then((data) => {
+      return data
+    });
 
 const sendCommentToServer = (comment) => {
     fetch('/api/comments', {
