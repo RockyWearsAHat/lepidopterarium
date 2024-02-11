@@ -12,7 +12,7 @@ const commentField = document.getElementById('comment');
 // });
 
 const sendCommentToServer = (comment) => {
-    fetch('/description', {
+    fetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
