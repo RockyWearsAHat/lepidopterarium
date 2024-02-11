@@ -60,13 +60,14 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/description", (req, res) => {
-  res.render("description", { layout: "main" });
-});
-
-app.post("/description", (req, res) => {
-  const { comment } = req.body;
-  console.log("Received comment:", comment);
-  res.json({ success: true, message: "Comment saved successfully" });
+  const tuna = req.body
+  console.log("Hello",req.body)
+  const commentsAndUsers = [
+    { comment: 'Sick butterfly', user: 'Spidey' },
+    { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
+    { comment: 'Have you ever petted a butterfly', user: 'Vegeta' },
+];
+  res.render("description", {commentsAndUsers} );
 });
 
 //SEE HERE for accessing db data -LK
