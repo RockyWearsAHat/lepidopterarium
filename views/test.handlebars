@@ -55,14 +55,12 @@
 <br>
 <br>
 <div id="comments-container">
-  {{#each commentsAndUsers as |comments| }} 
       <div class="comments-user-container" id="c1">
-        
-        <p class="coment-display">{{comments.comment}}</p> 
-        <p class="user-display">{{comments.user}}</p> 
-        
+        {{#each comments as |comment| }} 
+        <p class="coment-display">e{{comment}}</p> 
+        <p class="user-display">e{{comment}}</p> 
+        {{/each}}  
     </div>
-    {{/each}}  
     {{!-- <div class="comments-user-container" id="c1">
         <p class="coment-display">Sick butterfly</p> 
         <p class="user-display">Spidey</p>    
