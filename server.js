@@ -61,8 +61,14 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/description", (req, res) => {
-  res.render("description", { layout: "main" });
+  const commentsAndUsers = [
+    { comment: 'Sick butterfly', user: 'Spidey' },
+    { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
+    { comment: 'Have you ever petted a butterfly', user: 'Vegeta' },
+];
+  res.render("description", {commentsAndUsers} );
 });
+
 
 // app.post("/description", (req, res) => {
 //   const {comment} = req.body;

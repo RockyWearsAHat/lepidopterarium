@@ -9,7 +9,7 @@
     {{!-- <header>{{> navbar}}</header> --}}
     <main>
       {{!-- {{> butterfly}}  --}}
-      <link rel="stylesheet" href="butterfly.css" />
+      {{!-- <link rel="stylesheet" href="butterfly.css" /> --}}
 {{!-- <img class="background-img" src="blue_morpho_bg.PNG" alt="" /> --}}
 
 </style>
@@ -55,9 +55,17 @@
 <br>
 <br>
 <div id="comments-container">
-    <div class="comments-user-container" id="c1">
+  {{#each commentsAndUsers as |comments| }} 
+      <div class="comments-user-container" id="c1">
+        
+        <p class="coment-display">{{comments.comment}}</p> 
+        <p class="user-display">{{comments.user}}</p> 
+        
+    </div>
+    {{/each}}  
+    {{!-- <div class="comments-user-container" id="c1">
         <p class="coment-display">Sick butterfly</p> 
-        <p class="user-display">-Spidey</p>    
+        <p class="user-display">Spidey</p>    
     </div>
     <div class="comments-user-container" id="c2">
         <p class="coment-display">Takes me back to the good'ol days, when we would entertain ourselves with catching butterfly tournaments</p> 
@@ -66,13 +74,13 @@
     <div class="comments-user-container" id="c2">
         <p class="coment-display">Have you ever petted a butterfly</p> 
         <p class="user-display">-Vegeta</p>    
-    </div>
+    </div> --}}
 </div>
 <footer class="bottom">
 
 </footer>
 <script src="description.js"></script>
     </main>
-    <script scr="./"></script>
+    
   </body>
 </html>
