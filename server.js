@@ -61,6 +61,8 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/description", (req, res) => {
+  const tuna = req.body
+  console.log("Hello",req.body)
   const commentsAndUsers = [
     { comment: 'Sick butterfly', user: 'Spidey' },
     { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
