@@ -2,6 +2,8 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
+const seedAll = require('./seeds/index.js'); // Adjust the path to where seedAll is defined
+
 
 const session = require("express-session");
 const sessionOpts = require("./db/session");
@@ -59,6 +61,7 @@ app.get("/register", (req, res) => {
   res.render("register", { layout: "main" });
 });
 
+
 app.get("/description", async (req, res) => {
   try {
     // Fetch all comments
@@ -66,7 +69,7 @@ app.get("/description", async (req, res) => {
     const comments = await Comments.findAll();
 
     // Process fetched comments
-    console.log(a);
+    console.log(comments);
 
     // Sample data to render alongside comments
     const commentsAndUsers = [
@@ -140,7 +143,20 @@ app.post("/description", (req, res) => {
 
 //Force sync models, NOTE - FORCE: TRUE CAUSES ALL MODELS AND DATA FROM CURRENT DB TO BE WIPED
 //remember to reseed data/repost data if necessary, or turn force: false if the models aren't being updated
-sequelize.sync({ force: false }).then(() => {
-  // seedAll();
-  app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
-});
+// sequelize.sync({ force: false }).then(() => {
+//   seedAll();
+//   app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
+// });
+
+// seedAll()
+async function startServer() {
+  try {
+    await sequelize.sync({ force: false });
+    await seedAll();
+    app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
+  } catch (error) {
+    console.error('Failed to start the server:', error);
+  }
+}
+
+startServer();
