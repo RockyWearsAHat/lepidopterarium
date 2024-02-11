@@ -59,15 +59,29 @@ app.get("/register", (req, res) => {
   res.render("register", { layout: "main" });
 });
 
-app.get("/description", (req, res) => {
-  const tuna = req.body
-  console.log("Hello",req.body)
-  const commentsAndUsers = [
-    { comment: 'Sick butterfly', user: 'Spidey' },
-    { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
-    { comment: 'Have you ever petted a butterfly', user: 'Vegeta' },
-];
-  res.render("description", {commentsAndUsers} );
+app.get("/description", async (req, res) => {
+  try {
+    // Fetch all comments
+    // const a = await Region.findAll();
+    const comments = await Comments.findAll();
+
+    // Process fetched comments
+    console.log(a);
+
+    // Sample data to render alongside comments
+    const commentsAndUsers = [
+      { comment: 'Sick butterfly', user: 'Spidey' },
+      { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
+      { comment: 'Have you ever petted a butterfly', user: 'Vegeta' },
+    ];
+
+    // Render the description template with comments and users data
+    res.render("description", { commentsAndUsers, comments });
+  } catch (error) {
+    // Handle error
+    console.error('Error fetching comments:', error);
+    res.status(500).send('Error fetching comments');
+  }
 });
 
 //SEE HERE for accessing db data -LK
