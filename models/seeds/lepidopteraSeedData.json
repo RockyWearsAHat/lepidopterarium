@@ -1,92 +1,92 @@
 [
-    {
-      "ID": "001",
-      "Region": "Central and South America",
-      "Name": "Blue Morpho  Morpho menelaus",
-      "DESC":"They have iridescent wings that have structural color, it means that it isn't really colored blue, their scales reflect light and makes it look blue. When their wings are closed, the colors are darker so they can camouflage away from birds that want to eat them.",
-      "Images":"[\"bluemorpho1.jpeg\",\"bluemorpho2.jpeg\", \"bluemorpho3.jpeg\", \"bluemorpho4.jpeg\", \"bluemorpho_bg.PNG\"]",
-      "Facts": "They like to suck up rotten fruit, mud, and carrion",
-      "Comments":""
-    },
-    {
-      "ID": "002",
-      "Region": "Asia",
-      "Name": "Atlas Moth Attacus Atlas",
-      "DESC": "They are about the size of a dinner plate, when they come out of the cocoon they live for about 3-7 days. The males are bigger with bushier antennae and the females are smaller with less bushy atennae.",
-      "Images":"[\"atlas moth1.jpeg\",\"atlas moth2.jpeg\",\"atlas moth3.jpeg\",\"atlas moth4.jpeg\"]",
-      "Facts": "They can stay in their cocoon for about a year before coming out, this is called diapause or something like hibernating",
-      "Comments":""
-    },
-    {
-        "ID": "003",
-        "Region": "Central America",
-        "Name": "Tiger Longwing Heliconius ismenius",
-        "DESC":"The longwing butterflies tend to mimic or copy the pattern of their wings with other poisonous butterflies to keep themselves safe.",
-        "Images":"[\"tiger wing2.jpeg\",\"tiger wing3.jpeg\",\"tiger wing4.jpeg\"]",
-        "Facts": "They were named after Mount Helicon, the inspiration for a stumped naturalist looking for a good name.",
-        "Comments":""
-      },
-      {
-        "ID": "004",
-        "Region": "Africa",
-        "Name": "African Moon Moth Argema mimosa",
-        "DESC":"These moths look similar to the North American luna moth but has a longer tail and it crosses as it fully forms.",
-        "Images":"[\"african moon1.jpeg\",\"african moon2.jpeg\"]",
-        "Facts": "It is a kind of silk moth",
-        "Comments":""
-      },
-      {
-        "ID": "005",
-        "Region": "Central and South America",
-        "Name": "Glasswing Butterflies Greta oto",
-        "DESC":"The males eat poisonous plants which makes them poisonous and bitter to predators, their clear wings help them blend in to their environment.",
-        "Images":"[\"glasswing1.jpeg\",\"glasswing2.jpeg\",\"glasswing3.jpeg\",\"glasswing4.jpeg\"]",
-        "Facts": "They help scientists study how color in butterflies and moths evolve.",
-        "Comments":""
-        },
-        {
-          "ID": "006",
-          "Region": "South America",
-          "Name": "Jazzy Leafwing Hypna clytemnestra",
-          "DESC":"They are difficult butterflies to find and are considered rare, their wings copy the patterns of dead leaves.",
-          "Images":"[\"jazzy1.jpeg\",\"jazzy2.jpeg\",\"jazzy3.jpeg\",\"jazzy4.jpeg\"]",
-          "Facts": "Largest in the group of neotropical butterflies with wings that look like dead leaves",
-          "Comments":""
-        },
-        {
-            "ID": "007",
-            "Region": "Central and South America",
-            "Name": "Cattleheart Parides sp.",
-            "DESC":"There is a marking on its wing that looks like a cow's heart, hence the name.",
-            "Images":"[\"cattlehart1.jpeg\",\"cattlehart2.jpeg\",\"cattlehart3.jpeg\",\"cattlehart4.jpeg\"]",
-            "Facts": "It also eats poisonous plants which make them taste unpleasant to predators",
-            "Comments":""
-          },
-          {
-            "ID": "008",
-            "Region": "Asia",
-            "Name": "Great Orange-tip Hebomoia glaucippe",
-            "DESC":"There are many different orange-tip butterflies, some live in the UK or North America, these types live in the tropics. They also use camouflage to look like dead leaves but also employ poison in their wings to deter predators.",
-            "Images":"[\"orange tipped1.jpeg\", \"orange tipped2.jpeg\", \"orange tipped3.jpeg\", \"orange tipped4.jpeg\"]",
-            "Facts": "Their caterpillars mimic the venomous vine snake.",
-            "Comments":""
-          },
-          {
-            "ID": "009",
-            "Region": "Papua New Guinea",
-            "Name": "Queen Alexandra's Birdwing Ornithoptera alexandrae",
-            "DESC":"The biggest butterfly in the world and unfortunately endangered. There is a strong sexual dimorphism between male and female, meaning that it is easy to tell which is female and male based on its colors. The males are more colorful than the females.",
-            "Images":"",
-            "Facts": "Named after Queen Alexandra of Denmark, daughter-in-law of Queen Victoria",
-            "Comments":""
-          },
-          {
-            "ID": "010",
-            "Region": "Southeast Asia",
-            "Name": "Emerald Peacock Papilio palinurus",
-            "DESC":"Lives in forests, their caterpillars feeds on rue and citrus plants.Like the Blue Morpho, the color on their wings come from structural color instead of being pigmented.",
-            "Images":"",
-            "Facts": "It also eats poisonous plants which make them taste unpleasant to predators",
-            "Comments":""
-          }
-    ]
+  {
+    "ID": "001",
+    "Region": "Central and South America",
+    "Name": "Blue Morpho  Morpho menelaus",
+    "DESC": "They have iridescent wings that have structural color, it means that it isn't really colored blue, their scales reflect light and makes it look blue. When their wings are closed, the colors are darker so they can camouflage away from birds that want to eat them.",
+    "Images": "[\"bluemorpho1.jpeg\",\"bluemorpho2.jpeg\", \"bluemorpho3.jpeg\", \"bluemorpho4.jpeg\", \"bluemorpho_bg.PNG\"]",
+    "Facts": "They like to suck up rotten fruit, mud, and carrion",
+    "Comments": ""
+  },
+  {
+    "ID": "002",
+    "Region": "Asia",
+    "Name": "Atlas Moth Attacus Atlas",
+    "DESC": "They are about the size of a dinner plate, when they come out of the cocoon they live for about 3-7 days. The males are bigger with bushier antennae and the females are smaller with less bushy atennae.",
+    "Images": "[\"atlas moth1.jpeg\",\"atlas moth2.jpeg\",\"atlas moth3.jpeg\",\"atlas moth4.jpeg\"]",
+    "Facts": "They can stay in their cocoon for about a year before coming out, this is called diapause or something like hibernating",
+    "Comments": ""
+  },
+  {
+    "ID": "003",
+    "Region": "Central America",
+    "Name": "Tiger Longwing Heliconius ismenius",
+    "DESC": "The longwing butterflies tend to mimic or copy the pattern of their wings with other poisonous butterflies to keep themselves safe.",
+    "Images": "[\"tiger wing2.jpeg\",\"tiger wing3.jpeg\",\"tiger wing4.jpeg\"]",
+    "Facts": "They were named after Mount Helicon, the inspiration for a stumped naturalist looking for a good name.",
+    "Comments": ""
+  },
+  {
+    "ID": "004",
+    "Region": "Africa",
+    "Name": "African Moon Moth Argema mimosa",
+    "DESC": "These moths look similar to the North American luna moth but has a longer tail and it crosses as it fully forms.",
+    "Images": "[\"african moon1.jpeg\",\"african moon2.jpeg\"]",
+    "Facts": "It is a kind of silk moth",
+    "Comments": ""
+  },
+  {
+    "ID": "005",
+    "Region": "Central and South America",
+    "Name": "Glasswing Butterflies Greta oto",
+    "DESC": "The males eat poisonous plants which makes them poisonous and bitter to predators, their clear wings help them blend in to their environment.",
+    "Images": "[\"glasswing1.jpeg\",\"glasswing2.jpeg\",\"glasswing3.jpeg\",\"glasswing4.jpeg\"]",
+    "Facts": "They help scientists study how color in butterflies and moths evolve.",
+    "Comments": ""
+  },
+  {
+    "ID": "006",
+    "Region": "South America",
+    "Name": "Jazzy Leafwing Hypna clytemnestra",
+    "DESC": "They are difficult butterflies to find and are considered rare, their wings copy the patterns of dead leaves.",
+    "Images": "[\"jazzy1.jpeg\",\"jazzy2.jpeg\",\"jazzy3.jpeg\",\"jazzy4.jpeg\"]",
+    "Facts": "Largest in the group of neotropical butterflies with wings that look like dead leaves",
+    "Comments": ""
+  },
+  {
+    "ID": "007",
+    "Region": "Central and South America",
+    "Name": "Cattleheart Parides sp.",
+    "DESC": "There is a marking on its wing that looks like a cow's heart, hence the name.",
+    "Images": "[\"cattlehart1.jpeg\",\"cattlehart2.jpeg\",\"cattlehart3.jpeg\",\"cattlehart4.jpeg\"]",
+    "Facts": "It also eats poisonous plants which make them taste unpleasant to predators",
+    "Comments": ""
+  },
+  {
+    "ID": "008",
+    "Region": "Asia",
+    "Name": "Great Orange-tip Hebomoia glaucippe",
+    "DESC": "There are many different orange-tip butterflies, some live in the UK or North America, these types live in the tropics. They also use camouflage to look like dead leaves but also employ poison in their wings to deter predators.",
+    "Images": "[\"orange tipped1.jpg\", \"orange tipped2.jpg\", \"orange tipped3.jpg\", \"orange tipped4.jpg\"]",
+    "Facts": "Their caterpillars mimic the venomous vine snake.",
+    "Comments": ""
+  },
+  {
+    "ID": "009",
+    "Region": "Papua New Guinea",
+    "Name": "Queen Alexandra's Birdwing Ornithoptera alexandrae",
+    "DESC": "The biggest butterfly in the world and unfortunately endangered. There is a strong sexual dimorphism between male and female, meaning that it is easy to tell which is female and male based on its colors. The males are more colorful than the females.",
+    "Images": "[\"Alexandras-Birdwing-caterpillar.jpg\", \"Alexandras-Birdwing-Chrysalis.jpg\",\"queen-alexandras-birdwing.jpg\",\"Queen-Alexandras-Birdwing2.jpg\"]",
+    "Facts": "Named after Queen Alexandra of Denmark, daughter-in-law of Queen Victoria",
+    "Comments": ""
+  },
+  {
+    "ID": "010",
+    "Region": "Southeast Asia",
+    "Name": "Emerald Peacock Papilio palinurus",
+    "DESC": "Lives in forests, their caterpillars feeds on rue and citrus plants.Like the Blue Morpho, the color on their wings come from structural color instead of being pigmented.",
+    "Images": "[\"Emerald Peacock.jpg\",\"Emerald Peacock2.jpeg\",\"Emerald Peacock3.jpg\"]",
+    "Facts": "It also eats poisonous plants which make them taste unpleasant to predators",
+    "Comments": ""
+  }
+]
