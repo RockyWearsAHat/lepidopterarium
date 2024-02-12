@@ -39,6 +39,7 @@
   position: relative; 
   border-right: solid black 2px;
   border-left: solid black 2px;
+  max-width: 1800px;
 }
 .map-image {
   height: 100%;
