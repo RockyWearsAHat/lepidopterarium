@@ -1,9 +1,15 @@
-
 {{!-- Thankfully we can access any Lepo attributes simply with their name --}}
 
-<button id="{{id}}">
+<div class="butterfly-contatiner">
+  <button class="butterfly-btn" id="{{id}}">
+    <a href="/butterfly/{{id}}">{{name}}</a>
+  </button>
+  <img class="tile-img3" src="../{{images.[0]}}" alt="{{name}}" />
+</div>
+
+{{!--<button id="{{id}}">
     <a class="butterfly-container" href="/butterfly/{{id}}">
     <p>{{name}}</p>
     <img class="tile-img3" src="../{{images.[0]}}" alt="{{name}}" />
     </a>
-</button>
+</button>--}}
