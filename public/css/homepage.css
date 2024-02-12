@@ -33,8 +33,8 @@
   justify-content: center;
   background-color: whitesmoke;*/
   overflow: hidden; 
-  height: 80vh; 
-  max-width: 1024px; 
+  height: 80vh;
+  width: auto;
   margin: 0 auto; /* Center the container horizontally */
   position: relative; 
   border-right: solid black 2px;
@@ -48,7 +48,7 @@
   width: 100vw;/*
   object-fit: contain; */
   position: absolute; 
-  top: -25%; 
+  top: -40%; 
   /* left: 50%;  */
   transform: translateX(-50%); 
   width: 100vw;
@@ -57,13 +57,13 @@
 }
 
 #africa {
-    top: 68%;
+    top: 53%;
     left: 55%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #central {
-    top: 55%;
+    top: 40%;
     left: 22%;
     background-color:rgba(38, 90, 247, 0.67);
 }
@@ -74,25 +74,25 @@
 }
 
 #south-america {
-    top: 75%;
+    top: 60%;
     left: 28%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #asia {
-    top: 48%;
+    top: 33%;
     left: 78%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #guinea {
-    top: 75%;
+    top: 60%;
     left: 87%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #se-asia {
-    top: 60%;
+    top: 45%;
     left: 80%;
     background-color:rgba(38, 90, 247, 0.67);
 }
