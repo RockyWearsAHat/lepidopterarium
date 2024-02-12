@@ -2,7 +2,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
-const seedAll = require('./seeds/index.js'); // Adjust the path to where seedAll is defined
+// const seedAll = require('./seeds/index.js'); // Adjust the path to where seedAll is defined
 
 
 const session = require("express-session");
@@ -173,8 +173,8 @@ app.get("/:region", async (req, res) => {
 // seedAll()
 async function startServer() {
   try {
-    await sequelize.sync({ force: true });
-    await seedAll();
+    await sequelize.sync({ force: false });
+    // await seedAll();
     app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
   } catch (error) {
     console.error('Failed to start the server:', error);

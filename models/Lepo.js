@@ -7,7 +7,6 @@ Lepo.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -17,10 +16,6 @@ Lepo.init(
     },
     sciName: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    regionId: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
     desc: {
