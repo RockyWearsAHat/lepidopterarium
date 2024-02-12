@@ -11,7 +11,6 @@ Region.hasMany(Lepo, {
     foreignKey:'regionId',
 });
 
-
 Comments.belongsTo(Lepo, {
     foreignKey: 'lepoId'
 })

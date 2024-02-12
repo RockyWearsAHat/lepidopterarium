@@ -2,8 +2,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const sequelize = require("./db/sequelizeConn");
-const seedAll = require('./seeds/index.js'); // Adjust the path to where seedAll is defined
-
+// const seedAll = require('./seeds/index.js'); // Adjust the path to where seedAll is defined
 
 const session = require("express-session");
 const sessionOpts = require("./db/session");
@@ -68,45 +67,79 @@ app.get("/logout", (req, res) => {
   });
 });
 
-
 app.get("/butterfly/:id", async (req, res) => {
-  if (req.session && req.session.loggedIn == true) console.log("logged in!");
+  // if (req.session && req.session.loggedIn == true) console.log("logged in!");
   try {
     // Fetch all comments
     // const a = await Region.findAll();
     // const comments = await Comments.findAll();
     let paramId = req.params.id;
-
-    let dbButterflyData = await Lepo.findByPk(paramId, {
-      include: [
-        {
-          model: Region,
-          attributes: ['regionName']
-        },
-        {
-          model: Comments, 
-          include: [
-            {
-              model: User,
-              attributes: ['username'], 
-            },
-          ],
-        },
-      ],
-    });
-
-    if (!dbButterflyData){
+    let dbButterflyData;
+    //Fetch correct data for name or id parameter passed in URL
+    if (!isNaN(paramId) && !isNaN(parseFloat(paramId))) {
+      dbButterflyData = await Lepo.findByPk(paramId, {
+        include: [
+          {
+            model: Region,
+            attributes: ["regionName"],
+          },
+          {
+            model: Comments, // Include comments associated with OtherModel
+            include: [
+              {
+                model: User, // Include data from User model
+                attributes: ["username"], // Include only the 'username' attribute from User model
+              },
+            ],
+          },
+        ],
+      });
+    } else {
+      paramId = paramId.split("_").join(" ");
+      dbButterflyData = await Lepo.findOne({
+        where: { name: paramId },
+        include: [
+          {
+            model: Region,
+            attributes: ["regionName"],
+          },
+          {
+            model: Comments, // Include comments associated with OtherModel
+            include: [
+              {
+                model: User, // Include data from User model
+                attributes: ["username"], // Include only the 'username' attribute from User model
+              },
+            ],
+          },
+        ],
+      });
+    }
+    
+    if (!dbButterflyData) {
       return res.status(404).send("Butterfly data not found");
     }
 
     const butterflyData = dbButterflyData.get({ plain: true });
     const images = JSON.parse(butterflyData.images);
 
-    res.render("description", { layout: "main", butterflyData: butterflyData, images: images, loggedIn: req.session.loggedIn });
+    res.render("description", {
+      layout: "main",
+      butterflyData: butterflyData,
+      images: images,
+      loggedIn: req.session.loggedIn,
+    });
+
+    //If query param is a number, assume user should be redirected to the /name of butterfly
+    if (!isNaN(paramId) && !isNaN(parseFloat(paramId))) {
+      res.redirect(
+        `/butterfly/${butterflyData.name.split(" ").join("_").toLowerCase()}`
+      );
+    }
   } catch (error) {
     // Handle error
-    console.error('Error fetching comments:', error);
-    res.status(500).send('Error fetching comments');
+    console.error("Error fetching comments:", error);
+    res.status(500).send("Error processing request");
   }
 });
 
@@ -119,13 +152,26 @@ app.get("/:region", async (req, res) => {
   let paramId;
   // Ive added this switch case to get the ids. Its hard coded so not friendly for future dev but it works for now. The names in the db dont match the names in the href anyways and im too lazy to fix it. -LK
   switch (req.params.region) {
-    case 'central': paramId = 1;break;
-    case 'africa': paramId = 2;break;
-    case 'southamerica': paramId = 3;break;
-    case 'asia': paramId = 4;break;
-    case 'guinea': paramId = 5;break;
-    case 'seasia': paramId = 6;break;
-    default: break;
+    case "central":
+      paramId = 1;
+      break;
+    case "africa":
+      paramId = 2;
+      break;
+    case "southamerica":
+      paramId = 3;
+      break;
+    case "asia":
+      paramId = 4;
+      break;
+    case "guinea":
+      paramId = 5;
+      break;
+    case "seasia":
+      paramId = 6;
+      break;
+    default:
+      break;
   }
   try {
     const dbRegionData = await Region.findByPk(paramId, {
@@ -136,47 +182,41 @@ app.get("/:region", async (req, res) => {
         },
       ],
     });
-    if (!dbRegionData){
+    if (!dbRegionData) {
       return res.status(404).send("Region Data not found");
     }
 
     //Data has to be converted to this plain then we can access the data as an object in the handlebars files. ex. {{data.regionName}} !! -LK
-    const regionData = dbRegionData.get({ plain: true })
+    const regionData = dbRegionData.get({ plain: true });
 
     console.log(regionData);
     console.log(regionData.Lepos);
 
-    regionData.Lepos.forEach(lepo => {
+    regionData.Lepos.forEach((lepo) => {
       const imagesArray = JSON.parse(lepo.images);
-      
+
       lepo.images = imagesArray;
     });
     //Here we use the handlebars render function to get the "region" file(1st parameter) to render in the body of the "main" layout. We are also passing the regionData to display. -LK
-    res.render("region", { layout: "main", regionData: regionData, loggedIn: req.session.loggedIn });
-    
+    res.render("region", {
+      layout: "main",
+      regionData: regionData,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-
 //#endregion
-
-//Force sync models, NOTE - FORCE: TRUE CAUSES ALL MODELS AND DATA FROM CURRENT DB TO BE WIPED
-//remember to reseed data/repost data if necessary, or turn force: false if the models aren't being updated
-// sequelize.sync({ force: false }).then(() => {
-//   seedAll();
-//   app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
-// });
-
-// seedAll()
 async function startServer() {
   try {
     await sequelize.sync({ force: false });
+await sequelize.sync({ force: false });
     app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
   } catch (error) {
-    console.error('Failed to start the server:', error);
+    console.error("Failed to start the server:", error);
   }
 }
 
