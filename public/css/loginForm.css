@@ -30,6 +30,7 @@ h2{
   outline: none;
   text-align: center;
   border-bottom: 1px solid white;
+  color: white;
 }
 
 #login_form > input::placeholder {

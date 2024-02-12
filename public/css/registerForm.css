@@ -23,6 +23,10 @@ body {
   margin-top: 1em;
 }
 
+#register_form > input {
+  color: white;
+}
+
 #rptPasswordWrap {
   position: relative;
 }
