@@ -173,8 +173,7 @@ app.get("/:region", async (req, res) => {
 // seedAll()
 async function startServer() {
   try {
-    await sequelize.sync({ force: true });
-    await seedAll();
+    await sequelize.sync({ force: false });
     app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
   } catch (error) {
     console.error('Failed to start the server:', error);
