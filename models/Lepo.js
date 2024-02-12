@@ -15,6 +15,10 @@ Lepo.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    sciName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     regionId: {
       type: DataTypes.INTEGER,
       allowNull: false,

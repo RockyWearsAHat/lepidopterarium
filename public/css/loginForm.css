@@ -1,9 +1,17 @@
 #login_formWrapper {
   width: 100vw;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: -7em;
+}
+body {
+  background-color: var(--registerPageBackground);
+}
+
+h2{
+  color: aliceblue;
 }
 
 #login_form {
