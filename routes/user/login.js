@@ -3,6 +3,7 @@ const User = require("../../models/user");
 const isEmail = require("../../db/helpers/checkIfEmail");
 
 routeHandler.post("/", async (req, res) => {
+  console.log(req.sessionID)
   try {
     //Again ensure that all passed parameters are valid
     if (
@@ -32,6 +33,7 @@ routeHandler.post("/", async (req, res) => {
     if (await foundUser.validatePassword(req.body.password)) {
       await req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.username = foundUser;
         res.json("Logged in user!");
       });
       return;

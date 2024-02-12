@@ -10,7 +10,7 @@ const sessionOpts = {
     maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
   },
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize,
   }),
