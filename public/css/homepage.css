@@ -1,16 +1,20 @@
 .region-btn {
-    height: 6%;
-    width: auto;
+  
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
     font-size: 2.8vh;
-    padding-left: 1%;
-    padding-right: 1%;
     border: solid rgb(255, 255, 255) 0.3vh;
     border-radius: 5px;
     position: absolute;
     transform: translate(-50%, -50%);
     box-shadow: -7px 8px 7px 0px rgb(0, 0, 0);
     z-index:2;
+    font-size: clamp(12px, 2vw, 24px);
 }
+
 .region-btn a {
   /* Ensure anchor tags are above buttons */
   z-index: 2;
@@ -18,8 +22,8 @@
   pointer-events: auto;
 }
 
+
 #map-container {
-  border: red solid 3px;
   /* height: 88vh;
   display: flex;
   position: absolute; 
@@ -29,10 +33,12 @@
   justify-content: center;
   background-color: whitesmoke;*/
   overflow: hidden; 
-  height: 80vh; 
-  max-width: 1024px; 
+  height: 80vh;
+  width: auto;
   margin: 0 auto; /* Center the container horizontally */
   position: relative; 
+  border-right: solid black 2px;
+  border-left: solid black 2px;
 }
 .map-image {
   height: 100%;
@@ -49,16 +55,21 @@
   /* z-index: -2; */
   transform: scale(1.2);
   object-fit: contain;
+/*   top: -40%;  */
+  /* left: 50%;  */
+/*   transform: translateX(-50%); 
+  width: 100vw;
+  transform: scale(1.2); */
 }
 
 #africa {
-    top: 58%;
+    top: 53%;
     left: 55%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #central {
-    top: 55%;
+    top: 40%;
     left: 22%;
     background-color:rgba(38, 90, 247, 0.67);
 }
@@ -69,29 +80,27 @@
 }
 
 #south-america {
-    top: 69%;
-    left: 33%;
+    top: 60%;
+    left: 28%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #asia {
-    top: 48%;
+    top: 33%;
     left: 78%;
     background-color:rgba(38, 90, 247, 0.67);
 }
 
 #guinea {
-    top: 65%;
-    left: 86%;
+    top: 60%;
+    left: 87%;
     background-color:rgba(38, 90, 247, 0.67);
-    font-size: 13.5px;
 }
 
 #se-asia {
-    top: 57%;
+    top: 45%;
     left: 80%;
     background-color:rgba(38, 90, 247, 0.67);
-    font-size: 13.5px;
 }
 
 a {
@@ -102,6 +111,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: bisque;
 }
 
 #page-title {

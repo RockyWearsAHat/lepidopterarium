@@ -115,7 +115,7 @@ app.get("/butterfly/:id", async (req, res) => {
         ],
       });
     }
-
+    
     if (!dbButterflyData) {
       return res.status(404).send("Butterfly data not found");
     }
@@ -139,7 +139,7 @@ app.get("/butterfly/:id", async (req, res) => {
   } catch (error) {
     // Handle error
     console.error("Error fetching comments:", error);
-    res.status(500).send(error);
+    res.status(500).send("Error processing request");
   }
 });
 
