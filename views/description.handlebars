@@ -29,11 +29,12 @@
     </p>
   </div>
 </div>
+{{#if loggedIn}}
 <div class="comment-container">
   <input id="comment" type="text" placeholder="Comment" />
   <img id="send" src="../logo.ico" alt="send icon shaped as butterfly">
 </div>
-
+{{/if}}
 <div id="comments-user-containerid">
    {{#each butterflyData.Comments as |comment| }} 
       <div class="comments-user-container" id="c1">
