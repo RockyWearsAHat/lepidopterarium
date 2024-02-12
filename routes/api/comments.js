@@ -1,22 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const User = require("../../models/Comments");
+
+const Lepo = require("../../models/Lepo")
 const Comments = require('../../models/Comments');
 
 
 //Post route for adding user comments
 router.post('/', async (req, res)=>{
     
-    const {comment} = req.body;
+    const {comment, butterflyName} = req.body;
     // console
     // console.log('Recieved comment:', comment);
     // console.log(req.session.username.username)
-
+    console.log(`HERE WE ARE`)
+    const lepoId = await Lepo.findOne({where: {name: butterflyName}})
+    console.log(lepoId.dataValues.id)
+    const myLepoId = lepoId.dataValues.id;
     if (comment) {
         await Comments.create({
             comment: comment, 
             userId: req.session.username.id,
-            lepoId: req.rawHeaders[11][lepoId.length-1],
+            lepoId: myLepoId,
         });
         console.log("comment created")
     } else {
