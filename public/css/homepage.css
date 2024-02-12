@@ -41,19 +41,25 @@
   border-left: solid black 2px;
 }
 .map-image {
-  height: 150%;
-  width: 120%;
+  height: 100%;
+  width: 100%;
   /* border: solid red 30px;
   position: relative;
   width: 100vw;/*
-  object-fit: contain; */
+  object-fit: contain;
   position: absolute; 
-  top: -40%; 
-  /* left: 50%;  */
-  transform: translateX(-50%); 
-  width: 100vw;
+  top: -25%; 
+  left: 50%; 
+  transform: translateX(-50%); */
+  /* width: 100vw; */
   /* z-index: -2; */
   transform: scale(1.2);
+  object-fit: contain;
+/*   top: -40%;  */
+  /* left: 50%;  */
+/*   transform: translateX(-50%); 
+  width: 100vw;
+  transform: scale(1.2); */
 }
 
 #africa {
