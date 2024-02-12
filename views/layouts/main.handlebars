@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/globals.css" />
+    <link rel="stylesheet" type="text/css" href="/navbar.css" />
+    <base href="http://localhost:3000/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="globals.css" />
 
-<head>
-  <link rel="stylesheet" type="text/css" href="/globals.css">
-  <link rel="stylesheet" type="text/css" href="/navbar.css">
-  <base href="http://localhost:3000/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="globals.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    <title>
+      {{#if butterflyData}} {{butterflyData.name}} - Explore {{else}} Winging It
+      Around The World {{/if}}
+    </title>
+  </head>
 
-  <title>Winging It Around The World</title>
-</head>
-<body>
- 
-  <header>
-  {{> navbar}}
-  </header>
-  <main>
-  {{{body}}}
-  </main>
-</body>
+  <body>
+    <header>{{> navbar}}</header>
+    <main>{{{body}}}</main>
+  </body>
 </html>
