@@ -61,25 +61,48 @@ app.get("/register", (req, res) => {
   res.render("register", { layout: "main" });
 });
 
+app.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    console.log("Logged out user");
+    res.render("logout", { layout: "main" });
+  });
+});
 
-app.get("/description", async (req, res) => {
+
+app.get("/butterfly/:id", async (req, res) => {
+  if (req.session && req.session.loggedIn == true) console.log("logged in!");
   try {
     // Fetch all comments
     // const a = await Region.findAll();
-    const comments = await Comments.findAll();
+    // const comments = await Comments.findAll();
+    let paramId = req.params.id;
 
-    // Process fetched comments
-    console.log(comments);
+    let dbButterflyData = await Lepo.findByPk(paramId, {
+      include: [
+        {
+          model: Region,
+          attributes: ['regionName']
+        },
+        {
+          model: Comments, // Include comments associated with OtherModel
+          include: [
+            {
+              model: User, // Include data from User model
+              attributes: ['username'], // Include only the 'username' attribute from User model
+            },
+          ],
+        },
+      ],
+    });
 
-    // Sample data to render alongside comments
-    const commentsAndUsers = [
-      { comment: 'Sick butterfly', user: 'Spidey' },
-      { comment: `Takes me back to the good 'ol days, when we would entertain ourselves with catching butterfly tournaments`, user: 'Mazerrackham' },
-      { comment: 'Have you ever petted a butterfly', user: 'Vegeta' },
-    ];
+    if (!dbButterflyData){
+      return res.status(404).send("Butterfly data not found");
+    }
 
-    // Render the description template with comments and users data
-    res.render("description", { commentsAndUsers, comments });
+    const butterflyData = dbButterflyData.get({ plain: true });
+    const images = JSON.parse(butterflyData.images);
+
+    res.render("description", { layout: "main", butterflyData: butterflyData, images: images, loggedIn: req.session.loggedIn });
   } catch (error) {
     // Handle error
     console.error('Error fetching comments:', error);
@@ -89,6 +112,7 @@ app.get("/description", async (req, res) => {
 
 //SEE HERE for accessing db data -LK
 app.get("/:region", async (req, res) => {
+  if (req.session && req.session.loggedIn == true) console.log("logged in!");
   // Using :region (^See above) we can access the given info passed in the URL. Since the hrefs  in the html lead us to /africa or (/(regionname)), rather than search the db by name  -LK
   console.log(`-------------- PARAMS : ${req.params.region}`);
 
@@ -115,12 +139,20 @@ app.get("/:region", async (req, res) => {
     if (!dbRegionData){
       return res.status(404).send("Region Data not found");
     }
-    //Data has to be converted to this plain then we can access the data as an object in the handlebars files. ex. {{data.regionName}} !! P.S.(in handlebars the object is always called data because its silly
-    // to call the object by the given var name here i guess) -LK
+
+    //Data has to be converted to this plain then we can access the data as an object in the handlebars files. ex. {{data.regionName}} !! -LK
     const regionData = dbRegionData.get({ plain: true })
+
     console.log(regionData);
+    console.log(regionData.Lepos);
+
+    regionData.Lepos.forEach(lepo => {
+      const imagesArray = JSON.parse(lepo.images);
+      
+      lepo.images = imagesArray;
+    });
     //Here we use the handlebars render function to get the "region" file(1st parameter) to render in the body of the "main" layout. We are also passing the regionData to display. -LK
-    res.render("region", { layout: "main", data: regionData });
+    res.render("region", { layout: "main", regionData: regionData, loggedIn: req.session.loggedIn });
     
   } catch (err) {
     console.log(err);
@@ -128,16 +160,6 @@ app.get("/:region", async (req, res) => {
   }
 });
 
-app.get("/logout", (req, res) => {
-  req.session.destroy(() => {
-    console.log("Logged out user");
-    res.render("logout", { layout: "main" });
-  });
-});
-
-app.post("/description", (req, res) => {
-  res.render("posted somthing");
-});
 
 //#endregion
 
@@ -151,7 +173,7 @@ app.post("/description", (req, res) => {
 // seedAll()
 async function startServer() {
   try {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
     await seedAll();
     app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
   } catch (error) {
