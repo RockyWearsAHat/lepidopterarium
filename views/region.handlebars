@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="/region.css">
+<style> main {
+     background-image: url({{regionData.filename}});
+     background-size: cover;
+     background-position: center bottom;
+     } 
+</style>
 <div id="region-container">
     <div id="region-info">
         {{!-- To display data, you have to use 'data' within the curly brackets while using handlebars then the name of the objects attribute. This info is passed through the http get request in server.js --}}
@@ -14,4 +20,6 @@
     {{> lepoSelect}}
     {{/each}}
     </div>
+</div>
+<div id="empty-box">
 </div>

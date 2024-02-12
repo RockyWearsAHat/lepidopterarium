@@ -84,11 +84,11 @@ app.get("/butterfly/:id", async (req, res) => {
           attributes: ['regionName']
         },
         {
-          model: Comments, // Include comments associated with OtherModel
+          model: Comments, 
           include: [
             {
-              model: User, // Include data from User model
-              attributes: ['username'], // Include only the 'username' attribute from User model
+              model: User,
+              attributes: ['username'], 
             },
           ],
         },
