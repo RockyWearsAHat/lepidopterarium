@@ -33,6 +33,14 @@ h2{
   color: white;
 }
 
+#login_form > h2 {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+
 #login_form > input::placeholder {
   color: white;
   text-align: center;
