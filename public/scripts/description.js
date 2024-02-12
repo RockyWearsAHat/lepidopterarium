@@ -1,18 +1,19 @@
 const sendButton = document.getElementById("send");
 const commentField = document.getElementById('comment');
 
-// const getComments = () =>
-// fetch('/description',{
-//     method: 'GET',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     }
-// }).then((res)=> res.json()).then((data)=>{
-//     return data
-// });
+const getComments = async () =>
+    fetch('/description', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => res.json())
+    .then((data) => {
+      return data
+    });
 
 const sendCommentToServer = (comment) => {
-    fetch('/description', {
+    fetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -56,6 +57,8 @@ sendButton.addEventListener("click", function() {
     commentField.value = ''
     sendCommentToServer(comment);
 });
+
+
 
 
     
