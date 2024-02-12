@@ -1,53 +1,82 @@
 main{
     display: flex;
     height: 88vh;
-    background-image: url('/A_large_blank_world_map_with_oceans_marked_in_blue.jpg');
+
     background-size: cover; 
     background-repeat: no-repeat;
 }
 
-main >* {
-    background-color: aliceblue;
+#empty-box{
+    min-height: 100%;
+    flex-basis: 40%;
+    flex-grow: 2;
 }
 #region-container {
-    width: 30vw;
-    border: black solid 3px;
+    background-color: rgba(187, 192, 189, 0.757);
+
+    flex-basis: 40%;
+    flex-shrink: 1;
 }
+@media (orientation: portrait) {
+    #region-container{
+        flex-basis: 100%;
+    }
+    #empty-box{
+        flex-basis: 0%;
+    }
+  }
 
 #hero-box {
     width: 70vw;
 }
 
 #region-info {
-    font-size: 2.5vh;
     padding: 1rem;
     border: solid 3px black;
 }
+#region-info > h1 {
+    font-size: clamp(18px, 2vw, 35px); 
+}
+#region-info > p {
+    font-size: clamp(10px, 1vw, 25px); 
+}
 #select-container {
+    display: flex;
+    flex-direction: column;
     user-select: none;
     padding: 1rem;
     border: solid 3px black;
 }
-ul {
-    list-style: none;
-    padding: 0;
+
+
+
+button {
+    height: 8vh;
+    border-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.691);
 }
-li {
-    font-size: 3vh;
-    list-style: none;
-    font-size: 2rem;
+.butterfly-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10%;
-    border: solid black 2px;
-    margin-bottom: 1vh;
-}
-
-li > img {
     height: 100%;
+    justify-content: space-evenly;
 }
-
-.select-li {
-    font-size: 3vh;
+.butterfly-container > * {
+    height: 100%;
+    width: max-content;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.butterfly-container > p {
+    font-size: 80%; 
+}
+@media (min-width: 750px) {
+    .butterfly-container > p {
+        font-size: 120%; 
+    }
+}
+button {
+    margin-bottom: 3vh;
 }
