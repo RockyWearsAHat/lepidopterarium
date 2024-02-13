@@ -1,3 +1,4 @@
+const sequelize = require("../../db/sequelizeConn");
 const { Region, Lepo, User, Comments } = require("../../models");
 
 const router = require("express").Router();
@@ -46,25 +47,7 @@ router.post("/", async (req, res) => {
 
 router.post("/delete", async (req, res) => {
   try {
-    console.log(req.body.table);
-
-    switch (req.body.table) {
-      case "region":
-        await Region.truncate();
-        break;
-      case "lepo":
-        await Lepo.truncate();
-        break;
-      case "user":
-        await User.truncate();
-        break;
-      case "comments":
-        await Comments.truncate();
-        break;
-      default:
-        res.json({ error: "invalid table" });
-        return;
-    }
+    sequelize.destroyAll();
 
     res.json({ success: true });
   } catch (err) {
