@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "seed": "node seeds/runSeeds.js"
   },
   "keywords": [],
