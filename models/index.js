@@ -8,6 +8,7 @@ Lepo.belongsTo(Region, {
 });
 Region.hasMany(Lepo, {
   foreignKey: "regionId",
+  onDelete: "CASCADE",
 });
 
 Comments.belongsTo(Lepo, {

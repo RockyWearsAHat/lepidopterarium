@@ -1,5 +1,8 @@
 const sequelize = require("../../db/sequelizeConn");
-const { Region, Lepo, User, Comments } = require("../../models");
+const Region = require("../../models/Region");
+const Lepo = require("../../models/Lepo");
+const User = require("../../models/user");
+const Comments = require("../../models/Comments");
 
 const router = require("express").Router();
 
@@ -43,16 +46,6 @@ router.post("/", async (req, res) => {
   }
 
   res.json({ success: true });
-});
-
-router.post("/delete", async (req, res) => {
-  try {
-    await sequelize.destroyAll();
-    res.json({ success: true });
-  } catch (err) {
-    console.log(err);
-    res.json({ error: err });
-  }
 });
 
 module.exports = router;
