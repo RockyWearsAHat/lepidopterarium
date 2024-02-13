@@ -1,32 +1,64 @@
-<link rel="stylesheet" href="registerForm.css" />
+<link rel="stylesheet" href="/css/registerForm.css" />
 <div id="register_formWrapper">
   <form id="register_form">
     <div id="register_usernameWrap">
-      <input type="text" maxlength="64" id="register_usernameInput" placeholder="Username" />
+      <input
+        type="text"
+        maxlength="64"
+        id="register_usernameInput"
+        placeholder="Username"
+      />
       <i id="register_availableUsername" class="material-symbols-outlined"></i>
     </div>
     <div id="register_emailWrap">
-      <input type="text" maxlength="64" id="register_emailInput" placeholder="Email (Not Required)" />
+      <input
+        type="text"
+        maxlength="64"
+        id="register_emailInput"
+        placeholder="Email (Not Required)"
+      />
       <i id="register_availableEmail" class="material-symbols-outlined"></i>
     </div>
-    <input type="text" maxlength="64" id="register_firstName" placeholder="First Name" />
-    <input type="text" maxlength="64" id="register_lastName" placeholder="Last Name" />
+    <input
+      type="text"
+      maxlength="64"
+      id="register_firstName"
+      placeholder="First Name"
+    />
+    <input
+      type="text"
+      maxlength="64"
+      id="register_lastName"
+      placeholder="Last Name"
+    />
     <div id="register_passwordViewWrap">
-      <input type="password" maxlength="64" id="register_passwordInput" placeholder="Password" />
+      <input
+        type="password"
+        maxlength="64"
+        id="register_passwordInput"
+        placeholder="Password"
+      />
       <i
         id="register_showPassword"
         class="material-symbols-outlined"
         associatedPwd="register_passwordInput"
-      >visibility_off</i>
+        >visibility_off</i
+      >
     </div>
     <div id="rptPasswordWrap">
       <div id="register_rptPasswordViewWrap">
-        <input type="password" maxlength="64" id="register_rptPasswordInput" placeholder="Repeat Password" />
+        <input
+          type="password"
+          maxlength="64"
+          id="register_rptPasswordInput"
+          placeholder="Repeat Password"
+        />
         <i
           id="register_showRptPassword"
           class="material-symbols-outlined"
           associatedPwd="register_rptPasswordInput"
-        >visibility_off</i>
+          >visibility_off</i
+        >
       </div>
       <i id="register_passwordsMatch" class="material-symbols-outlined"></i>
     </div>
@@ -35,5 +67,5 @@
   </form>
 </div>
 
-<script src="checkIfEmail.js"></script>
-<script src="register.js"></script>
+<script src="/scripts/checkIfEmail.js"></script>
+<script src="/scripts/register.js"></script>

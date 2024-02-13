@@ -8,6 +8,9 @@
     "start": "nodemon server.js",
     "seed": "node seeds/runSeeds.js"
   },
+  "engines": {
+    "node": "20.11.0"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",

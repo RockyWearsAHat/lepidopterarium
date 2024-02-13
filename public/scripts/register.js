@@ -12,14 +12,21 @@ const submitBtn = document.getElementById("register_submitBtn");
 const handleSubmit = async (e) => {
   await e.preventDefault();
   try {
-    if (!usernameEl || usernameEl.value == "") throw new Error("Username cannot be blank");
-    if (!firstNameEl || firstNameEl.value == "") throw new Error("First name cannot be blank");
-    if (!lastNameEl || lastNameEl.value == "") throw new Error("Last name cannot be blank");
-    if (!passwordEl || passwordEl.value == "") throw new Error("Password cannot be blank");
-    if (!rptPasswordEl || rptPasswordEl.value == "") throw new Error("Repeat password cannot be blank");
-    if (emailEl.value != "" && !isEmail(emailEl.value)) throw new Error("Please enter a valid email address");
+    if (!usernameEl || usernameEl.value == "")
+      throw new Error("Username cannot be blank");
+    if (!firstNameEl || firstNameEl.value == "")
+      throw new Error("First name cannot be blank");
+    if (!lastNameEl || lastNameEl.value == "")
+      throw new Error("Last name cannot be blank");
+    if (!passwordEl || passwordEl.value == "")
+      throw new Error("Password cannot be blank");
+    if (!rptPasswordEl || rptPasswordEl.value == "")
+      throw new Error("Repeat password cannot be blank");
+    if (emailEl.value != "" && !isEmail(emailEl.value))
+      throw new Error("Please enter a valid email address");
 
-    if (rptPasswordEl.value != passwordEl.value) throw new Error("Passwords do not match!");
+    if (rptPasswordEl.value != passwordEl.value)
+      throw new Error("Passwords do not match!");
 
     let body = {};
 
@@ -29,7 +36,7 @@ const handleSubmit = async (e) => {
     body.lastName = lastNameEl.value;
     body.password = passwordEl.value;
 
-    const res = await fetch("http://localhost:3000/api/user/register", {
+    const res = await fetch("/api/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,15 +47,22 @@ const handleSubmit = async (e) => {
     const jsonRes = await res.json();
 
     if (jsonRes.err) {
-      throw new Error(`${jsonRes.err.substring(0, 1).toUpperCase()}${jsonRes.err.substring(1)}`);
+      throw new Error(
+        `${jsonRes.err.substring(0, 1).toUpperCase()}${jsonRes.err.substring(
+          1
+        )}`
+      );
     }
 
-    const loginRes = await fetch("http://localhost:3000/api/user/login", {
+    const loginRes = await fetch("/api/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: usernameEl.value, password: passwordEl.value }),
+      body: JSON.stringify({
+        username: usernameEl.value,
+        password: passwordEl.value,
+      }),
     });
 
     console.log(loginRes);
@@ -70,7 +84,8 @@ const handleSubmit = async (e) => {
 const passwordsMatchEl = document.getElementById("register_passwordsMatch");
 const updatePasswordsMatchIcon = () => {
   if (rptPasswordEl.value.length == 0) return (passwordsMatchEl.innerHTML = "");
-  if (passwordEl.value == rptPasswordEl.value) passwordsMatchEl.innerHTML = "done";
+  if (passwordEl.value == rptPasswordEl.value)
+    passwordsMatchEl.innerHTML = "done";
   else passwordsMatchEl.innerHTML = "close";
 };
 
@@ -99,7 +114,10 @@ const startUsernameTimeout = async (type, e) => {
   e.target.parentNode.children[1].innerHTML = "";
   if (e.target.value == "") return;
   clearTimeout(typingTimerUsername);
-  typingTimerUsername = setTimeout(async () => await checkIfExistsInDb(type, e), maxTypeTimeout);
+  typingTimerUsername = setTimeout(
+    async () => await checkIfExistsInDb(type, e),
+    maxTypeTimeout
+  );
 };
 
 const stopUsernameTimeout = () => {
@@ -110,7 +128,10 @@ const startEmailTimeout = async (type, e) => {
   e.target.parentNode.children[1].innerHTML = "";
   if (e.target.value == "") return;
   clearTimeout(typingTimerEmail);
-  typingTimerEmail = setTimeout(async () => await checkIfExistsInDb(type, e), maxTypeTimeout);
+  typingTimerEmail = setTimeout(
+    async () => await checkIfExistsInDb(type, e),
+    maxTypeTimeout
+  );
 };
 
 const stopEmailTimeout = (timerVar) => {
@@ -118,7 +139,7 @@ const stopEmailTimeout = (timerVar) => {
 };
 
 const checkIfExistsInDb = async (type, e) => {
-  const res = await fetch(`http://localhost:3000/api/user/check?type=${type}&val=${e.target.value}`);
+  const res = await fetch(`/api/user/check?type=${type}&val=${e.target.value}`);
   const json = await res.json();
 
   console.log(json);
@@ -148,7 +169,9 @@ const rptShowPassword = document.getElementById("register_showRptPassword");
 showPassword.addEventListener("click", toggleAssosciatedPasswordInput);
 rptShowPassword.addEventListener("click", toggleAssosciatedPasswordInput);
 
-usernameEl.addEventListener("keyup", (e) => startUsernameTimeout("username", e));
+usernameEl.addEventListener("keyup", (e) =>
+  startUsernameTimeout("username", e)
+);
 emailEl.addEventListener("keyup", (e) => startEmailTimeout("email", e));
 usernameEl.addEventListener("keydown", () => stopUsernameTimeout);
 emailEl.addEventListener("keydown", () => stopEmailTimeout);
