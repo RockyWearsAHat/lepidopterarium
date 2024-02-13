@@ -1,6 +1,6 @@
 # Winging It Around The World &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# <a href="https://lepidopterarium-ac74b3d1a334.herokuapp.com/" target="blank">View The Site Here</a>
+# [View The Live Site Here](https://lepidopterarium-ac74b3d1a334.herokuapp.com/){:target="_blank"}
 
 ## Description: 
 This Project is an interactive web platform designed specifically for the butterfly museum at Thanksgiving Point in Utah. This site offers a unique, educational experience for butterfly enthusiasts and researchers alike. Featuring a global map on its homepage, users can easily navigate through different regions to discover various butterfly species. By selecting a specific region, visitors can delve into detailed pages showcasing images and information on individual butterflies, enriching their knowledge and appreciation for these fascinating creatures. This project serves as a digital extension of the Lepidopterarium, providing an accessible and engaging way for people around the world to explore the beauty and diversity of butterflies.
