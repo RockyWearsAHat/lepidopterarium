@@ -115,7 +115,7 @@ app.get("/butterfly/:id", async (req, res) => {
         ],
       });
     }
-    
+
     if (!dbButterflyData) {
       return res.status(404).send("Butterfly data not found");
     }
@@ -212,9 +212,14 @@ app.get("/:region", async (req, res) => {
 //#endregion
 async function startServer() {
   try {
-    await sequelize.sync({ force: false });
-await sequelize.sync({ force: false });
-    app.listen(3000, () => console.log("App is listening on http://localhost:3000"));
+    if (process.env.DATABASE_URL) {
+      await sequelize.authenticate();
+    } else {
+      await sequelize.sync({ force: false });
+    }
+    app.listen(3000, () =>
+      console.log("App is listening on http://localhost:3000")
+    );
   } catch (error) {
     console.error("Failed to start the server:", error);
   }
