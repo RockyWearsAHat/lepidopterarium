@@ -7,7 +7,7 @@ main{
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -82,6 +82,14 @@ button {
     align-items: center;
     border-radius: 5px;
 }
+
+.butterfly-contatiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
 .butterfly-container > p {
     font-size: 80%; 
 }
@@ -92,4 +100,17 @@ button {
 }
 button {
     margin-bottom: 3vh;
+}
+
+.butterfly-btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    margin-block: 10px;
+    transition: 0.2s all ease-out;
+}
+
+.butterfly-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
