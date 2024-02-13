@@ -41,6 +41,8 @@ const sendCommentToServer = (comment) => {
     .then((data) => {
       console.log("Comment sent to fetch:", data);
       // Add comment to the page
+    }).then (data => {
+        location.reload()
     })
     .catch((error) => {
       console.error("Error saving comment:", error);
