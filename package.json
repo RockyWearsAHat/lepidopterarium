@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run seed && node server.js",
     "seed": "node seeds/runSeeds.js"
   },
   "engines": {
