@@ -47,8 +47,7 @@ router.post("/", async (req, res) => {
 
 router.post("/delete", async (req, res) => {
   try {
-    sequelize.destroyAll();
-
+    await sequelize.destroyAll();
     res.json({ success: true });
   } catch (err) {
     res.json({ error: err });
