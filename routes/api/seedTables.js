@@ -50,6 +50,7 @@ router.post("/delete", async (req, res) => {
     await sequelize.destroyAll();
     res.json({ success: true });
   } catch (err) {
+    console.log(err);
     res.json({ error: err });
   }
 });
