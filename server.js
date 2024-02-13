@@ -29,9 +29,8 @@ app.set("views", process.cwd() + "/views");
 app.set("view engine", "handlebars");
 
 //Set up static routes for references on pages
-app.use("/", express.static("public/images"));
-app.use("/", express.static("public/css"));
-app.use("/", express.static("public/scripts"));
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 //Use multipart form encoding and json parsing
 app.use(express.json());
