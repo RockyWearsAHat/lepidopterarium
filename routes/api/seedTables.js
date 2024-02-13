@@ -49,16 +49,16 @@ router.post("/delete", async (req, res) => {
 
   switch (req.body.table) {
     case "region":
-      await Region.destroyAll();
+      await Region.truncate();
       break;
     case "lepo":
-      await Lepo.destroyAll();
+      await Lepo.truncate();
       break;
     case "user":
-      await User.destroyAll();
+      await User.truncate();
       break;
     case "comments":
-      await Comments.destroyAll();
+      await Comments.truncate();
       break;
     default:
       res.json({ error: "invalid table" });
