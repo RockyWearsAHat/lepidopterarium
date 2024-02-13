@@ -217,7 +217,7 @@ async function startServer() {
     } else {
       await sequelize.sync({ force: false });
     }
-    app.listen(3000, () =>
+    app.listen(process.env.PORT || 3000, () =>
       console.log("App is listening on http://localhost:3000")
     );
   } catch (error) {
