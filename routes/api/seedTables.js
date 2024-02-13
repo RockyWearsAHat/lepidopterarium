@@ -45,10 +45,25 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/delete", async (req, res) => {
-  await Region.truncate();
-  await Lepo.truncate();
-  await Comments.truncate();
-  await User.truncate();
+  console.log(req.body.table);
+
+  switch (req.body.table) {
+    case "region":
+      await Region.truncate();
+      break;
+    case "lepo":
+      await Lepo.truncate();
+      break;
+    case "user":
+      await User.truncate();
+      break;
+    case "comments":
+      await Comments.truncate();
+      break;
+    default:
+      res.json({ error: "invalid table" });
+      return;
+  }
 
   res.json({ success: true });
 });
