@@ -45,27 +45,31 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/delete", async (req, res) => {
-  console.log(req.body.table);
+  try {
+    console.log(req.body.table);
 
-  switch (req.body.table) {
-    case "region":
-      await Region.truncate();
-      break;
-    case "lepo":
-      await Lepo.truncate();
-      break;
-    case "user":
-      await User.truncate();
-      break;
-    case "comments":
-      await Comments.truncate();
-      break;
-    default:
-      res.json({ error: "invalid table" });
-      return;
+    switch (req.body.table) {
+      case "region":
+        await Region.truncate();
+        break;
+      case "lepo":
+        await Lepo.truncate();
+        break;
+      case "user":
+        await User.truncate();
+        break;
+      case "comments":
+        await Comments.truncate();
+        break;
+      default:
+        res.json({ error: "invalid table" });
+        return;
+    }
+
+    res.json({ success: true });
+  } catch (err) {
+    res.json({ error: err });
   }
-
-  res.json({ success: true });
 });
 
 module.exports = router;
