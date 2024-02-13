@@ -32,17 +32,12 @@ const sendCommentToServer = (comment) => {
     body: JSON.stringify({ comment, butterflyName }),
   })
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      console.log(response);
-      return response.json();
+      if (!response.ok) throw new Error("Unable to post");
+      response.json();
     })
     .then((data) => {
-      console.log("Comment sent to fetch:", data);
-      // Add comment to the page
-    }).then (data => {
-        location.reload()
+      // console.log(data.message);
+      window.location.reload();
     })
     .catch((error) => {
       console.error("Error saving comment:", error);
@@ -59,11 +54,13 @@ commentField.addEventListener("keypress", (event) => {
     commentField.value = "";
   }
 });
-sendButton.addEventListener("mouseover", function () {
-  sendButton.style.cursor = "pointer";
-});
+
 sendButton.addEventListener("click", function () {
-  sendButton.style.cursor = "pointer";
+  if (
+    document.getElementById("send").getAttribute("disabled") == "true" ||
+    document.getElementById("comment").getAttribute("disabled") == "true"
+  )
+    return;
   const comment = commentField.value;
   console.log(comment);
   commentField.value = "";
